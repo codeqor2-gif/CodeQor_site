@@ -1,0 +1,72 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+export default function Loader() {
+  const [hide, setHide] = useState(false);
+  const [gone, setGone] = useState(false);
+
+  useEffect(() => {
+    const t1 = setTimeout(() => setHide(true), 1500);
+    const t2 = setTimeout(() => setGone(true), 2100);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, []);
+
+  if (gone) return null;
+
+  return (
+    <motion.div
+      initial={{ opacity: 1 }}
+      animate={{ opacity: hide ? 0 : 1 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white"
+      aria-busy="true"
+    >
+      <motion.svg
+        width="96"
+        height="96"
+        viewBox="0 0 48 48"
+        fill="none"
+        initial={{ scale: 0.7, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        aria-hidden="true"
+      >
+        <defs>
+          <linearGradient id="loaderGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#a78bfa" />
+            <stop offset="0.55" stopColor="#7c3aed" />
+            <stop offset="1" stopColor="#d946ef" />
+          </linearGradient>
+        </defs>
+        <rect width="48" height="48" rx="13" fill="url(#loaderGrad)" />
+        <circle cx="24" cy="15" r="4" fill="#fff" />
+        <circle cx="13" cy="31" r="3" fill="#fff" opacity="0.85" />
+        <circle cx="35" cy="31" r="3" fill="#fff" opacity="0.85" />
+        <path
+          d="M24 19v11M24 19L13.5 28M24 19l10.5 9M15.5 29.5h17"
+          stroke="#fff"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+        <circle cx="24" cy="33" r="2.5" fill="#f0abfc" />
+      </motion.svg>
+
+      <div className="mt-6 flex space-x-3">
+        {[0, 1, 2].map((i) => (
+          <motion.span
+            key={i}
+            className="h-3 w-3 rounded-full"
+            style={{ backgroundColor: "#8b5cf6" }}
+            animate={{ opacity: [0.25, 1, 0.25], scale: [0.9, 1.15, 0.9] }}
+            transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
+          />
+        ))}
+      </div>
+    </motion.div>
+  );
+}
