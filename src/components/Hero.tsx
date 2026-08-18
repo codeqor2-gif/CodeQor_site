@@ -66,7 +66,7 @@ export default function Hero() {
           className="max-w-4xl text-3xl font-extrabold leading-[1.1] tracking-tight text-zinc-900 sm:text-4xl md:text-5xl lg:text-6xl"
         >
           Driving Business{" "}
-          <span className="text-gradient">Growth with</span>
+          <span className="text-gradient">Growthut with</span>
           <br />
           Scalable Digital
           <br />
