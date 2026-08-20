@@ -25,8 +25,7 @@ export default function FinalCTA() {
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
           <button
             onClick={() => scrollTo("contactus")}
-            className="group inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-[#0052a3] shadow-[0_8px_28px_rgba(0,0,0,0.2)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.3)] hover:brightness-105"
-            style={{ background: "#f0f6ff" }}
+            className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary-600 to-accent-600 px-7 py-3 text-sm font-semibold text-white shadow-[0_8px_28px_rgba(0,102,204,0.4)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(0,102,204,0.5)] hover:brightness-110 cursor-pointer"
           >
             Start Your Project
             <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
