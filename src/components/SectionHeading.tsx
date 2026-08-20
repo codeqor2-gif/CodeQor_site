@@ -14,23 +14,23 @@ export default function SectionHeading({
   title,
   highlight,
   subtitle,
-  center = true,
+  center = false,
   className = "",
 }: SectionHeadingProps) {
   return (
     <Reveal
-      className={`${center ? "text-center" : ""} max-w-3xl ${center ? "mx-auto" : ""} mb-12 ${className}`}
+      className={`${center ? "text-center" : ""} max-w-3xl ${center ? "mx-auto" : ""} mb-8 ${className}`}
     >
       {eyebrow && (
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-primary-600">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-primary-600">
           {eyebrow}
         </p>
       )}
-      <h2 className="text-3xl font-bold leading-snug text-zinc-900 sm:text-4xl md:text-[2.6rem]">
+      <h2 className="text-2xl font-bold leading-snug text-zinc-900 sm:text-3xl md:text-4xl">
         {title} {highlight && <span className="text-gradient">{highlight}</span>}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base">{subtitle}</p>
+        <p className="mt-3 text-sm leading-relaxed text-zinc-600">{subtitle}</p>
       )}
     </Reveal>
   );

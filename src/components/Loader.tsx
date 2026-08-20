@@ -23,7 +23,11 @@ export default function Loader() {
       initial={{ opacity: 1 }}
       animate={{ opacity: hide ? 0 : 1 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center"
+      style={{
+        background:
+          "radial-gradient(circle at center, #11C5E8 0%, #0AAFE0 25%, #0078E7 60%, #0052CC 100%)",
+      }}
       aria-busy="true"
     >
       <motion.svg
@@ -38,9 +42,9 @@ export default function Loader() {
       >
         <defs>
           <linearGradient id="loaderGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#a78bfa" />
-            <stop offset="0.55" stopColor="#7c3aed" />
-            <stop offset="1" stopColor="#d946ef" />
+            <stop stopColor="#33a1de" />
+            <stop offset="0.55" stopColor="#0066cc" />
+            <stop offset="1" stopColor="#12c4d4" />
           </linearGradient>
         </defs>
         <rect width="48" height="48" rx="13" fill="url(#loaderGrad)" />
@@ -53,7 +57,7 @@ export default function Loader() {
           strokeWidth="2"
           strokeLinecap="round"
         />
-        <circle cx="24" cy="33" r="2.5" fill="#f0abfc" />
+        <circle cx="24" cy="33" r="2.5" fill="#b2ebf2" />
       </motion.svg>
 
       <div className="mt-6 flex space-x-3">
@@ -61,7 +65,7 @@ export default function Loader() {
           <motion.span
             key={i}
             className="h-3 w-3 rounded-full"
-            style={{ backgroundColor: "#8b5cf6" }}
+            style={{ backgroundColor: "#0080cc" }}
             animate={{ opacity: [0.25, 1, 0.25], scale: [0.9, 1.15, 0.9] }}
             transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
           />

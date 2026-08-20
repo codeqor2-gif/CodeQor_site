@@ -21,7 +21,7 @@ function useVisibleCount() {
   return count;
 }
 
-const GAP_PX = 24;
+const GAP_PX = 20;
 
 export default function Testimonials() {
   const visible = useVisibleCount();
@@ -68,28 +68,28 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative overflow-hidden bg-gradient-to-b from-white via-zinc-50/80 to-white py-24"
+      className="relative overflow-hidden bg-gradient-to-b from-white via-zinc-50/80 to-white py-10"
     >
-      <div className="pointer-events-none absolute left-1/4 top-16 -z-10 h-72 w-72 animate-aurora rounded-full bg-primary-400/15 blur-[110px]" />
-      <div className="pointer-events-none absolute right-1/4 bottom-16 -z-10 h-72 w-72 animate-aurora rounded-full bg-accent-400/15 blur-[110px] [animation-delay:-11s]" />
+      <div className="pointer-events-none absolute left-1/4 top-16 -z-10 h-60 w-60 animate-aurora rounded-full bg-primary-400/10 blur-[100px]" />
+      <div className="pointer-events-none absolute right-1/4 bottom-16 -z-10 h-60 w-60 animate-aurora rounded-full bg-accent-400/10 blur-[100px] [animation-delay:-11s]" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeading
-          eyebrow="Client Reviews"
+        
           title="Trusted by Our Clients"
           highlight="Worldwide"
-          subtitle="Real feedback from businesses that scaled with our technology and marketing solutions."
+          
         />
 
         <div
-          className="relative mt-10"
+          className="relative mt-6"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
           <div ref={wrapRef} className="overflow-hidden">
             <motion.div
               animate={{ x: tx }}
-              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="flex"
               style={{ gap: GAP_PX }}
             >
@@ -99,43 +99,43 @@ export default function Testimonials() {
                   <motion.div
                     key={t.author}
                     style={{ width: cardW > 0 ? cardW : undefined }}
-                    className={`group relative flex shrink-0 flex-col rounded-2xl border bg-white p-6 transition-all duration-500 ${
+                    className={`group relative flex shrink-0 flex-col rounded-2xl border border-zinc-200 bg-white p-5 shadow-[0_6px_22px_rgba(0,102,204,0.06)] transition-all duration-500 ${
                       isActive
-                        ? "border-primary-300 shadow-[0_20px_60px_rgba(139,92,246,0.16)] scale-[1.02]"
-                        : "border-zinc-200 shadow-[0_8px_28px_rgba(139,92,246,0.07)] scale-100 opacity-80"
+                        ? "border-primary-300 shadow-[0_16px_50px_rgba(0,102,204,0.14)] scale-[1.02]"
+                        : "border-zinc-200 shadow-[0_6px_22px_rgba(0,102,204,0.06)] scale-100 opacity-80"
                     }`}
-                    whileHover={{ y: -4 }}
+                    whileHover={{ y: -3 }}
                   >
                     <div className="flex items-center gap-1 text-amber-400">
                       {Array.from({ length: 5 }).map((_, j) => {
-                        if (j < Math.floor(t.rating)) return <FaStar key={j} size={13} />;
+                        if (j < Math.floor(t.rating)) return <FaStar key={j} size={12} />;
                         if (j === Math.floor(t.rating) && t.rating % 1 >= 0.5)
-                          return <FaStarHalfAlt key={j} size={13} />;
-                        return <FaStar key={j} size={13} className="opacity-30" />;
+                          return <FaStarHalfAlt key={j} size={12} />;
+                        return <FaStar key={j} size={12} className="opacity-30" />;
                       })}
-                      <span className="ml-1 text-xs font-bold text-primary-600">
+                      <span className="ml-1 text-[11px] font-bold text-primary-600">
                         {t.rating.toFixed(1)}
                       </span>
                     </div>
 
-                    <h3 className="mt-3 text-base font-bold text-zinc-900">{t.title}</h3>
+                    <h3 className="mt-2.5 text-sm font-bold text-zinc-900">{t.title}</h3>
 
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-600 line-clamp-4">
+                    <p className="mt-1.5 flex-1 text-xs leading-relaxed text-zinc-600 line-clamp-4">
                       {t.quote}
                     </p>
 
-                    <div className="mt-5 flex items-center justify-between border-t border-zinc-100 pt-4">
-                      <div className="flex items-center gap-3">
-                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-600 to-accent-600 text-[11px] font-bold text-white">
+                    <div className="mt-4 flex items-center justify-between border-t border-zinc-100 pt-3">
+                      <div className="flex items-center gap-2.5">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-600 to-accent-600 text-[10px] font-bold text-white">
                           {t.author
                             .split(" ")
                             .map((w) => w[0])
                             .slice(0, 2)
                             .join("")}
                         </span>
-                        <span className="text-sm font-semibold text-zinc-800">{t.author}</span>
+                        <span className="text-xs font-semibold text-zinc-800">{t.author}</span>
                       </div>
-                      <button className="text-xs font-semibold text-blue-500 transition-colors hover:text-blue-700">
+                      <button className="text-[11px] font-semibold text-blue-500 transition-colors hover:text-blue-700">
                         Read More
                       </button>
                     </div>
@@ -145,26 +145,26 @@ export default function Testimonials() {
             </motion.div>
           </div>
 
-          <div className="mt-8 flex items-center justify-center gap-3">
+          <div className="mt-6 flex items-center justify-center gap-2.5">
             <button
               onClick={prev}
               aria-label="Previous"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 shadow-sm transition-all hover:border-primary-400 hover:text-primary-600 disabled:opacity-40"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 shadow-sm transition-all hover:border-primary-400 hover:text-primary-600 disabled:opacity-40"
               disabled={index === 0}
             >
-              <FaChevronLeft size={12} />
+              <FaChevronLeft size={10} />
             </button>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5">
               {testimonials.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => goTo(i)}
                   aria-label={`Go to testimonial ${i + 1}`}
-                  className={`h-2 rounded-full transition-all duration-400 ${
+                  className={`h-1.5 rounded-full transition-all duration-400 ${
                     i === index
-                      ? "w-7 bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"
-                      : "w-2 bg-zinc-300 hover:bg-zinc-400"
+                      ? "w-6 bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]"
+                      : "w-1.5 bg-zinc-300 hover:bg-zinc-400"
                   }`}
                 />
               ))}
@@ -173,10 +173,10 @@ export default function Testimonials() {
             <button
               onClick={next}
               aria-label="Next"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 shadow-sm transition-all hover:border-primary-400 hover:text-primary-600 disabled:opacity-40"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 shadow-sm transition-all hover:border-primary-400 hover:text-primary-600 disabled:opacity-40"
               disabled={index >= maxIndex}
             >
-              <FaChevronRight size={12} />
+              <FaChevronRight size={10} />
             </button>
           </div>
         </div>

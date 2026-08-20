@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "NetRoots Technologies | Grow Your Business With Us",
+  title: "CodeQor Technologies | Grow Your Business With Us",
   description:
     "We blend creative marketing strategies with novel solutions that help businesses grow, connect, and thrive in their niche.",
 };

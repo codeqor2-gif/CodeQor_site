@@ -52,7 +52,7 @@ export default function Portfolio() {
               transition={{ duration: 0.6, delay: (i % 3) * 0.12, ease: "easeOut" }}
               whileHover={{ y: -10, rotateX: 4, rotateY: -3, scale: 1.02 }}
               style={{ perspective: 800 }}
-              className="group relative cursor-pointer overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-[0_10px_40px_rgba(139,92,246,0.08)] transition-shadow duration-300 hover:shadow-[0_24px_60px_rgba(139,92,246,0.22)]"
+              className="group relative cursor-pointer overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-[0_10px_40px_rgba(0,102,204,0.08)] transition-shadow duration-300 hover:shadow-[0_24px_60px_rgba(0,102,204,0.22)]"
             >
               <div className={`relative flex h-56 items-center justify-center bg-gradient-to-br ${gradientMap[project.tag] || "from-primary-600 to-accent-600"} transition-all duration-500`}>
                 <motion.span

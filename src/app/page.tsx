@@ -9,7 +9,9 @@ import Services from "@/components/Services";
 import Engagement from "@/components/Engagement";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
+import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import Copyright from "@/components/Copyright";
 
 export default function Home() {
   return (
@@ -26,8 +28,10 @@ export default function Home() {
         <Engagement />
         <Testimonials />
         <Contact />
+        <ContactForm />
       </main>
       <Footer />
+      <Copyright />
     </>
   );
 }
