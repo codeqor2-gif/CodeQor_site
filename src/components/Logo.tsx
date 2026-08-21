@@ -1,4 +1,4 @@
-export default function Logo({ compact = false }: { compact?: boolean }) {
+export default function Logo({ compact = false, light = false }: { compact?: boolean; light?: boolean }) {
   return (
     <div className="flex items-center gap-2.5">
       <svg width="40" height="40" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -18,10 +18,10 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
       </svg>
       {!compact && (
         <div className="leading-none">
-          <p className="text-lg font-bold tracking-tight text-zinc-900">
-            Code<span className="text-[#12C4D4]">Qor</span>
+          <p className={`text-lg font-bold tracking-tight ${light ? "text-white" : "text-zinc-900"}`}>
+            Code<span className={light ? "text-[#5CE1E6]" : "text-[#12C4D4]"}>Qor</span>
           </p>
-          <p className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.3em] text-primary-600">
+          <p className={`mt-0.5 text-[10px] font-medium uppercase tracking-[0.3em] ${light ? "text-white/70" : "text-primary-600"}`}>
             Technologies
           </p>
         </div>

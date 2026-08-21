@@ -101,10 +101,9 @@ export default function Testimonials() {
                     style={{ width: cardW > 0 ? cardW : undefined }}
                     className={`group relative flex shrink-0 flex-col rounded-2xl border border-zinc-200 bg-white p-5 shadow-[0_6px_22px_rgba(0,102,204,0.06)] transition-all duration-500 ${
                       isActive
-                        ? "border-primary-300 shadow-[0_16px_50px_rgba(0,102,204,0.14)] scale-[1.02]"
-                        : "border-zinc-200 shadow-[0_6px_22px_rgba(0,102,204,0.06)] scale-100 opacity-80"
-                    }`}
-                    whileHover={{ y: -3 }}
+                        ? "border-primary-300 shadow-[0_8px_40px_rgba(0,102,204,0.14)]"
+                        : "border-zinc-200 shadow-[0_6px_22px_rgba(0,102,204,0.06)] opacity-80"
+                    } hover:border-primary-400 hover:shadow-[0_8px_40px_rgba(0,102,204,0.25)]`}
                   >
                     <div className="flex items-center gap-1 text-amber-400">
                       {Array.from({ length: 5 }).map((_, j) => {

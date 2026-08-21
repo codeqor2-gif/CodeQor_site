@@ -43,7 +43,6 @@ export default function Achievements() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-              whileHover={{ y: -6 }}
               className="group rounded-2xl border border-zinc-200 bg-white p-6 text-center shadow-[0_8px_30px_rgba(0,102,204,0.06)] transition-all duration-400 hover:border-primary-400/60 hover:shadow-[0_16px_40px_rgba(0,102,204,0.14)]"
             >
               <div className="mx-auto mb-3 h-10 w-10 rounded-xl bg-gradient-to-br from-primary-600/20 to-accent-600/20 p-2.5 transition-transform duration-300 group-hover:scale-110">

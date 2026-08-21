@@ -1,35 +1,36 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import Logo from "./Logo";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
+  { label: "Home", href: "/#home" },
+  { label: "About Us", href: "/about" },
   {
     label: "Services",
-    href: "#solutions",
+    href: "/#solutions",
     children: [
-      { label: "Web Development", href: "#solutions" },
-      { label: "Mobile App Development", href: "#solutions" },
-      { label: "UI/UX Design", href: "#solutions" },
-      { label: "Cloud Solutions", href: "#solutions" },
-      { label: "Digital Marketing", href: "#solutions" },
-      { label: "SEO Services", href: "#solutions" },
+      { label: "Web Development", href: "/#solutions" },
+      { label: "Mobile App Development", href: "/#solutions" },
+      { label: "UI/UX Design", href: "/#solutions" },
+      { label: "Cloud Solutions", href: "/#solutions" },
+      { label: "Digital Marketing", href: "/#solutions" },
+      { label: "SEO Services", href: "/#solutions" },
     ],
   },
   {
     label: "Products",
-    href: "#solutions",
+    href: "/#solutions",
     children: [
-      { label: "CapoBrain", href: "#solutions" },
-      { label: "CapoBiz", href: "#solutions" },
+      { label: "CapoBrain", href: "/#solutions" },
+      { label: "CapoBiz", href: "/#solutions" },
     ],
   },
-  { label: "Industries", href: "#solutions" },
-  { label: "Contact Us", href: "#contactus" },
+  { label: "Industries", href: "/#solutions" },
+  { label: "Contact Us", href: "/#contactus" },
 ];
 
 export default function Navbar() {
@@ -44,14 +45,6 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setOpen(false);
-    setActiveDropdown(null);
-    const el = document.getElementById(href.replace("#", ""));
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
 
   const handleDropdownEnter = (label: string) => {
     if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
@@ -76,14 +69,13 @@ export default function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-12">
         {/* Logo — left */}
-        <a
-          href="#home"
-          onClick={(e) => scrollTo(e, "#home")}
+        <Link
+          href="/#home"
           className="shrink-0"
           aria-label="CodeQor Technologies home"
         >
           <Logo />
-        </a>
+        </Link>
 
         {/* Nav items — right */}
         <div className="hidden items-center gap-1 lg:flex">
@@ -95,10 +87,11 @@ export default function Navbar() {
                 onMouseEnter={() => navItem.children && handleDropdownEnter(navItem.label)}
                 onMouseLeave={navItem.children ? handleDropdownLeave : undefined}
               >
-                <a
+                <Link
                   href={navItem.href}
-                  onClick={(e) => {
-                    if (!navItem.children) scrollTo(e, navItem.href);
+                  onClick={() => {
+                    setOpen(false);
+                    setActiveDropdown(null);
                   }}
                   className="group relative flex items-center gap-1 rounded-lg px-3 py-2 text-[14px] font-medium text-zinc-600 transition-all duration-200 hover:bg-primary-50 hover:text-primary-600 cursor-pointer"
                 >
@@ -111,7 +104,7 @@ export default function Navbar() {
                       }`}
                     />
                   )}
-                </a>
+                </Link>
 
                 {/* Dropdown */}
                 <AnimatePresence>
@@ -126,14 +119,17 @@ export default function Navbar() {
                       onMouseLeave={handleDropdownLeave}
                     >
                       {navItem.children.map((child) => (
-                        <a
+                        <Link
                           key={child.label}
                           href={child.href}
-                          onClick={(e) => scrollTo(e, child.href)}
+                          onClick={() => {
+                            setOpen(false);
+                            setActiveDropdown(null);
+                          }}
                           className="block px-4 py-2.5 text-[13px] font-medium text-zinc-600 transition-colors hover:bg-primary-50 hover:text-primary-600"
                         >
                           {child.label}
-                        </a>
+                        </Link>
                       ))}
                     </motion.div>
                   )}
@@ -144,13 +140,12 @@ export default function Navbar() {
 
           {/* Login */}
           <div className="ml-3 border-l border-zinc-100 pl-3">
-            <a
-              href="#contactus"
-              onClick={(e) => scrollTo(e, "#contactus")}
-              className="inline-flex items-center rounded-lg bg-gradient-to-r from-primary-600 to-accent-600 px-5 py-2 text-[13px] font-semibold text-white shadow-[0_4px_16px_rgba(0,102,204,0.3)] transition-all duration-300 hover:brightness-110 cursor-pointer"
+            <Link
+              href="/#contactus"
+              className="inline-flex items-center rounded-full bg-gradient-to-r from-primary-600 to-accent-600 px-5 py-2 text-[13px] font-semibold text-white shadow-[0_4px_16px_rgba(0,102,204,0.3)] transition-all duration-300 hover:brightness-110 cursor-pointer"
             >
               Login
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -178,42 +173,42 @@ export default function Navbar() {
             <div className="flex flex-col gap-1 px-6 py-4">
               {navItems.map((navItem) => (
                 <div key={navItem.label}>
-                  <a
-                    href={navItem.href}
-                    onClick={(e) => {
-                      if (!navItem.children) scrollTo(e, navItem.href);
-                    }}
-                    className={`cursor-pointer rounded-lg px-3 py-3 text-sm font-medium transition-colors ${
-                      navItem.children
-                        ? "text-zinc-900 font-semibold"
-                        : "text-zinc-600 hover:bg-primary-50 hover:text-primary-600"
-                    }`}
-                  >
+<Link
+                      href={navItem.href}
+                      onClick={() => {
+                        setOpen(false);
+                      }}
+                      className={`cursor-pointer rounded-lg px-3 py-3 text-sm font-medium transition-colors ${
+                        navItem.children
+                          ? "text-zinc-900 font-semibold"
+                          : "text-zinc-600 hover:bg-primary-50 hover:text-primary-600"
+                      }`}
+                    >
                     {navItem.label}
-                  </a>
+                  </Link>
                   {navItem.children && (
                     <div className="ml-4 flex flex-col gap-0.5">
                       {navItem.children.map((child) => (
-                        <a
+                        <Link
                           key={child.label}
                           href={child.href}
-                          onClick={(e) => scrollTo(e, child.href)}
+                          onClick={() => setOpen(false)}
                           className="cursor-pointer rounded-lg px-3 py-2 text-[13px] text-zinc-500 transition-colors hover:bg-primary-50 hover:text-primary-600"
                         >
                           {child.label}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}
                 </div>
               ))}
-              <a
-                href="#contactus"
-                onClick={(e) => scrollTo(e, "#contactus")}
-                className="mt-2 inline-block rounded-lg bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 text-center text-sm font-semibold text-white"
+              <Link
+                href="/#contactus"
+                onClick={() => setOpen(false)}
+                className="mt-2 inline-block rounded-full bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 text-center text-sm font-semibold text-white"
               >
                 Login
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

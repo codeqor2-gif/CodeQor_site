@@ -27,6 +27,7 @@ export default function Loader() {
       style={{
         background:
           "radial-gradient(circle at center, #11C5E8 0%, #0AAFE0 25%, #0078E7 60%, #0052CC 100%)",
+        willChange: "opacity",
       }}
       aria-busy="true"
     >
@@ -65,9 +66,9 @@ export default function Loader() {
           <motion.span
             key={i}
             className="h-3 w-3 rounded-full"
-            style={{ backgroundColor: "#0080cc" }}
-            animate={{ opacity: [0.25, 1, 0.25], scale: [0.9, 1.15, 0.9] }}
-            transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
+            style={{ backgroundColor: "#0080cc", willChange: "opacity" }}
+            animate={{ opacity: [0.3, 1, 0.3] }}
+            transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut", delay: i * 0.25 }}
           />
         ))}
       </div>

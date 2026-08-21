@@ -7,6 +7,7 @@ type SectionHeadingProps = {
   subtitle?: string;
   center?: boolean;
   className?: string;
+  headingClassName?: string;
 };
 
 export default function SectionHeading({
@@ -16,6 +17,7 @@ export default function SectionHeading({
   subtitle,
   center = false,
   className = "",
+  headingClassName = "",
 }: SectionHeadingProps) {
   return (
     <Reveal
@@ -26,7 +28,7 @@ export default function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <h2 className="text-2xl font-bold leading-snug text-zinc-900 sm:text-3xl md:text-4xl">
+      <h2 className={`text-2xl font-bold leading-snug text-zinc-900 sm:text-3xl ${headingClassName}`}>
         {title} {highlight && <span className="text-gradient">{highlight}</span>}
       </h2>
       {subtitle && (

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -28,7 +29,7 @@ const legalLinks = [
 
 const companyLinks = [
   { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
+  { label: "About Us", href: "/about" },
   { label: "Solutions", href: "#solutions" },
   { label: "Contact", href: "#contactus" },
 ];
@@ -46,7 +47,7 @@ export default function Footer() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(160deg, #01101e 0%, #021a35 25%, #032a50 50%, #043a6a 75%, #054a80 100%)",
+            "linear-gradient(160deg, #021830 0%, #032d52 25%, #054575 50%, #075d98 75%, #0874b5 100%)",
         }}
       />
 
@@ -74,7 +75,7 @@ export default function Footer() {
           {/* Column 1 — Brand */}
           <div>
             <div className="mb-5">
-              <Logo />
+              <Logo light />
             </div>
             <p className="max-w-[300px] text-[13px] leading-[1.9] text-white/80">
               CodeQor Technologies is a full-service IT and digital marketing company
@@ -99,7 +100,7 @@ export default function Footer() {
                       e.preventDefault();
                       scrollTo("solutions");
                     }}
-                    className="text-[13px] text-white/80 transition-all duration-300 hover:text-white hover:pl-1"
+                    className="text-[13px] text-white/80 transition-colors duration-300 hover:text-white"
                   >
                     {item}
                   </a>
@@ -119,18 +120,20 @@ export default function Footer() {
             <ul className="flex flex-col gap-3.5">
               {companyLinks.map((item) => (
                 <li key={item.label}>
-                  <a
+                  <Link
                     href={item.href}
                     onClick={(e) => {
-                      e.preventDefault();
-                      const id = item.href.replace("#", "");
-                      const el = document.getElementById(id);
-                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                      if (item.href.startsWith("#")) {
+                        e.preventDefault();
+                        const id = item.href.replace("#", "");
+                        const el = document.getElementById(id);
+                        if (el) el.scrollIntoView({ behavior: "smooth" });
+                      }
                     }}
-                    className="text-[13px] text-white/80 transition-all duration-300 hover:text-white hover:pl-1"
+                    className="text-[13px] text-white/80 transition-colors duration-300 hover:text-white"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -149,7 +152,7 @@ export default function Footer() {
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="text-[13px] text-white/80 transition-all duration-300 hover:text-white hover:pl-1"
+                    className="text-[13px] text-white/80 transition-colors duration-300 hover:text-white"
                   >
                     {item.label}
                   </a>
@@ -165,7 +168,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="group flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.1] bg-white/[0.05] text-white/65 transition-all duration-300 hover:border-[#11C5E8]/50 hover:bg-[#11C5E8]/15 hover:text-[#11C5E8] hover:shadow-[0_0_20px_rgba(17,197,232,0.2)]"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.1] bg-white/[0.05] text-white/65 transition-colors duration-300 hover:border-[#11C5E8]/50 hover:bg-[#11C5E8]/15 hover:text-[#11C5E8]"
                 >
                   {social.icon}
                 </a>

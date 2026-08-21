@@ -53,7 +53,7 @@ export const techData: Record<string, { title: string; description: string; tech
     title: "Mobile Development",
     description:
       "Our Mobile Development team builds fast, cross-platform apps with modern tools for smooth user experiences.",
-    techs: ["React Native", "Flutter", "Swift", "Kotlin", "Xamarin"],
+    techs: ["React Native", "Flutter", "Swift", "Kotlin", "SwiftUI", ".NET MAUI"],
   },
   "Front-End": {
     title: "Front-End Development",
@@ -64,7 +64,7 @@ export const techData: Record<string, { title: string; description: string; tech
   Web: {
     title: "Web Development",
     description: "Build dynamic full-stack web applications using modern technology stacks.",
-    techs: ["Node.js", "React.js", "Express.js", "MongoDB", "HTML"],
+    techs: ["Node.js", "React.js", "Express.js", "MongoDB", "PHP", "HTML"],
   },
   "Back-End": {
     title: "Back-End Development",
@@ -84,7 +84,7 @@ export const techData: Record<string, { title: string; description: string; tech
   "UI/UX": {
     title: "UI/UX Design",
     description: "Craft intuitive and user-friendly designs using Figma, Sketch, Adobe XD, InVision, and Balsamiq.",
-    techs: ["Figma", "Sketch", "Adobe XD", "InVision", "Balsamiq"],
+    techs: ["Figma", "Sketch", "Adobe XD", "InVision", "Balsamiq", "Zeplin"],
   },
   "QA & Testing": {
     title: "QA & Testing",
