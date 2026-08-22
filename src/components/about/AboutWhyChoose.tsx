@@ -68,7 +68,7 @@ export default function AboutWhyChoose() {
         <Reveal className="mb-6">
           <SectionHeading
             title="Why Choose"
-            highlight="NetRoots"
+            highlight="CodeQor"
             
           />
         </Reveal>

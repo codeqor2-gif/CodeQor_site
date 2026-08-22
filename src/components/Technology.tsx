@@ -3,9 +3,9 @@
 import { useState, useRef, useCallback, useEffect, type ReactNode } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import {
   FaMobileAlt,
+  FaGlobe,
   FaCode,
   FaServer,
   FaCloud,
@@ -13,7 +13,6 @@ import {
   FaPaintBrush,
   FaBug,
   FaLink,
-  FaGlobe,
 } from "react-icons/fa";
 import { FaAws } from "react-icons/fa6";
 import {
@@ -49,7 +48,7 @@ import {
   SiGraphql,
   SiPolkadot,
 } from "react-icons/si";
-import { techTabs, techData, unsplashImages } from "@/lib/data";
+import { techTabs, techData } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
 
 const icons = [
@@ -110,64 +109,69 @@ const fallbackLogo = (
 
 export default function Technology() {
   const [active, setActive] = useState(techTabs[0]);
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(false);
+  const tabsRef = useRef<HTMLDivElement>(null);
+  const indicatorRef = useRef<HTMLDivElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [showIndicator, setShowIndicator] = useState(false);
 
-  const checkScroll = useCallback(() => {
-    const el = scrollRef.current;
+  const updateIndicator = useCallback(() => {
+    const el = tabsRef.current;
     if (!el) return;
-    setCanScrollLeft(el.scrollLeft > 2);
-    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 2);
+    const progress = el.scrollLeft / (el.scrollWidth - el.clientWidth);
+    setScrollProgress(progress);
+    setShowIndicator(el.scrollWidth > el.clientWidth + 4);
   }, []);
 
   useEffect(() => {
-    checkScroll();
-    const el = scrollRef.current;
+    const el = tabsRef.current;
     if (!el) return;
-    el.addEventListener("scroll", checkScroll, { passive: true });
-    window.addEventListener("resize", checkScroll);
+    updateIndicator();
+    el.addEventListener("scroll", updateIndicator, { passive: true });
+    window.addEventListener("resize", updateIndicator);
     return () => {
-      el.removeEventListener("scroll", checkScroll);
-      window.removeEventListener("resize", checkScroll);
+      el.removeEventListener("scroll", updateIndicator);
+      window.removeEventListener("resize", updateIndicator);
     };
-  }, [checkScroll]);
+  }, [updateIndicator]);
 
-  const scroll = (dir: "left" | "right") => {
-    const el = scrollRef.current;
+  const scrollToActive = useCallback(() => {
+    const el = tabsRef.current;
     if (!el) return;
-    const amount = dir === "left" ? -200 : 200;
-    el.scrollBy({ left: amount, behavior: "smooth" });
-  };
+    const activeBtn = el.querySelector(`[data-active="true"]`) as HTMLElement;
+    if (!activeBtn) return;
+    const containerRect = el.getBoundingClientRect();
+    const btnRect = activeBtn.getBoundingClientRect();
+    const scrollLeft = btnRect.left - containerRect.left + el.scrollLeft - containerRect.width / 2 + btnRect.width / 2;
+    el.scrollTo({ left: scrollLeft, behavior: "smooth" });
+  }, []);
+
+  useEffect(() => {
+    scrollToActive();
+  }, [active, scrollToActive]);
 
   return (
     <section id="technology" className="relative py-10">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-6 px-6 lg:grid-cols-2 lg:px-10">
-        {/* Left — Image (fixed, no layout shift) */}
+        {/* Left — Image */}
         <div className="relative order-1 flex flex-col">
           <div className="pointer-events-none absolute -inset-6 rounded-3xl bg-gradient-to-tr from-primary-400/25 to-accent-400/20 blur-2xl" />
-          <div className="h-[260px] overflow-hidden rounded-3xl border border-zinc-200 shadow-[0_20px_60px_rgba(0,102,204,0.14)]">
+          <div className="h-[260px] overflow-hidden rounded-2xl border border-zinc-200 shadow-[0_20px_60px_rgba(0,102,204,0.14)]">
             <Image
               src="/imagetech.jpg"
-              alt="Technology illustration - circuits and code"
+              alt="Technology illustration"
               fill
-              className="object-cover"
+              className="object-cover rounded-2xl"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-night-950/60 to-transparent" />
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-night-950/60 to-transparent" />
             <div className="absolute bottom-5 left-5 rounded-2xl border border-white/15 bg-night-900/80 p-2 backdrop-blur-md">
-              <p className="text-[9px] font-medium uppercase tracking-widest text-primary-300">
-                Powered by
-              </p>
+              <p className="text-[9px] font-medium uppercase tracking-widest text-primary-300">Powered by</p>
               <p className="mt-1 text-sm font-bold text-white">Modern Technology Stack</p>
             </div>
           </div>
-
           <div className="absolute -right-3 -top-3 rounded-2xl border border-primary-300 bg-white/95 px-2 py-1 text-center shadow-[0_10px_30px_rgba(0,102,204,0.2)] backdrop-blur-md">
             <p className="text-lg font-extrabold text-zinc-900">9+</p>
-            <p className="text-[9px] font-medium uppercase tracking-wider text-primary-600">
-              Domains
-            </p>
+            <p className="text-[9px] font-medium uppercase tracking-wider text-primary-600">Domains</p>
           </div>
         </div>
 
@@ -181,48 +185,21 @@ export default function Technology() {
             className="mb-0"
           />
 
-          <div className="relative mt-3 group/tabs">
-            {/* Left arrow */}
-            {canScrollLeft && (
-              <button
-                onClick={() => scroll("left")}
-                className="absolute -left-3 top-1/2 z-20 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-500 shadow-md transition-all duration-200 hover:border-primary-400 hover:text-primary-600 hover:shadow-lg cursor-pointer"
-              >
-                <FiChevronLeft size={16} />
-              </button>
-            )}
-
-            {/* Right arrow */}
-            {canScrollRight && (
-              <button
-                onClick={() => scroll("right")}
-                className="absolute -right-3 top-1/2 z-20 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-500 shadow-md transition-all duration-200 hover:border-primary-400 hover:text-primary-600 hover:shadow-lg cursor-pointer"
-              >
-                <FiChevronRight size={16} />
-              </button>
-            )}
-
-            {/* Fade edges */}
-            {canScrollLeft && (
-              <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-8 bg-gradient-to-r from-white to-transparent" />
-            )}
-            {canScrollRight && (
-              <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-8 bg-gradient-to-l from-white to-transparent" />
-            )}
-
-            {/* Scrollable tabs */}
+          {/* Horizontal scrollable tabs slider */}
+          <div className="mt-8">
             <div
-              ref={scrollRef}
-              className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide"
+              ref={tabsRef}
+              className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide snap-x snap-mandatory"
             >
               {techTabs.map((tab, i) => (
                 <button
                   key={tab}
+                  data-active={active === tab}
                   onClick={() => setActive(tab)}
-                  className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full px-3.5 py-2 text-xs font-medium transition-all duration-300 cursor-pointer ${
+                  className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold transition-all duration-300 snap-start cursor-pointer ${
                     active === tab
                       ? "bg-gradient-to-r from-primary-600 to-accent-600 text-white shadow-[0_4px_16px_rgba(0,102,204,0.4)]"
-                      : "border border-zinc-300 bg-white text-zinc-600 shadow-sm hover:border-primary-500/60 hover:text-primary-700"
+                      : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-800"
                   }`}
                 >
                   <span className="text-sm">{icons[i]}</span>
@@ -230,9 +207,24 @@ export default function Technology() {
                 </button>
               ))}
             </div>
+
+            {/* Scroll indicator */}
+            {showIndicator && (
+              <div className="relative mt-2 h-1 w-full overflow-hidden rounded-full bg-zinc-100">
+                <div
+                  ref={indicatorRef}
+                  className="absolute top-0 left-0 h-full rounded-full bg-gradient-to-r from-primary-500 to-accent-500 transition-all duration-150"
+                  style={{
+                    width: `${Math.max(25, 25 + scrollProgress * 75)}%`,
+                    left: `${scrollProgress * (100 - Math.max(25, 25 + scrollProgress * 75))}%`,
+                  }}
+                />
+              </div>
+            )}
           </div>
 
-          <div className="h-[260px] overflow-hidden rounded-2xl border border-primary-200/80 bg-white/90 p-4 shadow-[0_10px_36px_rgba(0,102,204,0.1)] backdrop-blur-sm">
+          {/* Content card */}
+          <div className="mt-8 h-[260px] overflow-hidden rounded-2xl border border-primary-200/80 bg-white/90 p-4 shadow-[0_10px_36px_rgba(0,102,204,0.1)] backdrop-blur-sm">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}

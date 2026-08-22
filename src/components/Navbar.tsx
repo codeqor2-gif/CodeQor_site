@@ -13,12 +13,12 @@ const navItems = [
     label: "Services",
     href: "/#solutions",
     children: [
-      { label: "Web Development", href: "/#solutions" },
-      { label: "Mobile App Development", href: "/#solutions" },
+      { label: "Web Development", href: "/web-development" },
+      { label: "Mobile App Development", href: "/mobile-app-development" },
       { label: "UI/UX Design", href: "/#solutions" },
       { label: "Cloud Solutions", href: "/#solutions" },
-      { label: "Digital Marketing", href: "/#solutions" },
-      { label: "SEO Services", href: "/#solutions" },
+      { label: "Digital Marketing", href: "/digital-marketing" },
+      { label: "SEO Services", href: "/seo-services" },
     ],
   },
   {

@@ -14,13 +14,13 @@ export default function AboutStory() {
               <div className="relative overflow-hidden rounded-3xl border border-zinc-200 shadow-[0_20px_60px_rgba(0,102,204,0.12)]">
                 <Image
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop"
-                  alt="NetRoots team collaboration"
+                  alt="CodeQor team collaboration"
                   width={800}
                   height={600}
                   className="h-auto w-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-3 -right-3 rounded-xl border border-primary-200 bg-white/95 px-3 py-1.5 shadow-[0_6px_20px_rgba(0,102,204,0.15)] backdrop-blur-md">
+              <div className="absolute -bottom-3 -right-3 rounded-xl border border-primary-200 bg-white/95 px-1 py-1 text-center shadow-[0_6px_20px_rgba(0,102,204,0.15)] backdrop-blur-md">
                 <p className="text-sm font-extrabold text-zinc-900">12+</p>
                 <p className="text-[9px] font-medium uppercase tracking-wider text-primary-600">Years of Excellence</p>
               </div>
@@ -34,7 +34,7 @@ export default function AboutStory() {
                 <span className="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">Digital Excellence</span>
               </h2>
               <p className="mt-4 text-zinc-600 leading-relaxed">
-                NetRoots Technologies is a full-service software development company
+                CodeQor Technologies is a full-service software development company
                 specializing in custom web applications, mobile apps, cloud solutions,
                 and AI-powered products. We partner with startups, SMEs, and enterprises
                 to build scalable, innovative technology that drives real business outcomes.
