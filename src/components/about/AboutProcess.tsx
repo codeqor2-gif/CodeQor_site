@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -37,14 +37,10 @@ const iconPaths = [
 
 export default function AboutProcess() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start 60%", "end 10%"],
-  });
-  const lineWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section ref={sectionRef} className="py-6 lg:py-10">
+    <section ref={sectionRef} className="py-4 lg:py-8">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal className="mb-6">
           <SectionHeading title="Our Development" highlight="Process" />
@@ -86,7 +82,10 @@ export default function AboutProcess() {
             <div className="absolute inset-x-6 h-[2px] rounded-full bg-zinc-100" />
             <motion.div
               className="absolute h-[2px] origin-left rounded-full bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400"
-              style={{ width: lineWidth, left: "1.5rem" }}
+              initial={{ scaleX: 0 }}
+              animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
+              transition={{ duration: 3, ease: "easeInOut" }}
+              style={{ width: "calc(100% - 3rem)", left: "1.5rem" }}
             />
             {steps.map((step, i) => (
               <div

@@ -63,9 +63,9 @@ const reasons = [
 
 export default function AboutWhyChoose() {
   return (
-    <section className="relative py-6 lg:py-10">
+    <section className="relative py-4 lg:py-8">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <Reveal className="mb-6">
+        <Reveal className="mb-2 -mt-4">
           <SectionHeading
             title="Why Choose"
             highlight="CodeQor"
@@ -77,15 +77,16 @@ export default function AboutWhyChoose() {
           {reasons.map((reason, i) => (
             <Reveal key={reason.title} y={30} delay={i * 0.08}>
               <motion.div
-                className="group relative flex gap-4 rounded-2xl border border-zinc-200 bg-white p-6 shadow-[0_6px_20px_rgba(0,102,204,0.06)] transition-all duration-300 hover:border-primary-300 hover:shadow-[0_16px_40px_rgba(0,102,204,0.1)]"
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white p-8 shadow-[0_8px_30px_rgba(0,102,204,0.06)] transition-all duration-300 hover:border-primary-300 hover:bg-primary-50/35 hover:shadow-[0_20px_50px_rgba(0,102,204,0.16)]"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-accent-600 text-white shadow-[0_6px_18px_rgba(0,102,204,0.3)]">
+                <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-600 to-primary-800 text-white shadow-[0_8px_20px_rgba(0,102,204,0.28)]">
                   {reason.icon}
                 </div>
-                <div>
-                  <h3 className="mb-2 text-base font-bold text-zinc-900">{reason.title}</h3>
+                <div className="flex flex-1 flex-col">
+                  <h3 className="mb-3 text-xl font-bold text-zinc-900">{reason.title}</h3>
                   <p className="text-sm leading-relaxed text-zinc-600">{reason.description}</p>
                 </div>
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-primary-500 to-accent-500 transition-all duration-500 group-hover:w-full" />
               </motion.div>
             </Reveal>
           ))}

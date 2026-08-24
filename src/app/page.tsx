@@ -18,7 +18,7 @@ export default function Home() {
     <>
       <Loader />
       <Navbar />
-      <main className="relative">
+      <main className="home-sections relative bg-white">
         <Hero />
         <Clients />
         <Stats />

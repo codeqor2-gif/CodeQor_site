@@ -13,7 +13,7 @@ const cards = [
     ),
     title: "Our Mission",
     description: "To empower businesses with innovative, scalable, and reliable software solutions that drive digital transformation and create measurable impact.",
-    gradient: "from-primary-600 to-primary-700",
+    gradient: "from-primary-600 to-primary-800",
   },
   {
     icon: (
@@ -24,7 +24,7 @@ const cards = [
     ),
     title: "Our Vision",
     description: "To be the most trusted technology partner for businesses worldwide — recognized for innovation, quality, and the lasting value we create for our clients.",
-    gradient: "from-accent-600 to-accent-700",
+    gradient: "from-primary-600 to-primary-800",
   },
   {
     icon: (
@@ -34,14 +34,14 @@ const cards = [
     ),
     title: "Our Values",
     description: "Integrity, innovation, collaboration, and excellence. We believe in transparent communication, agile delivery, and building technology that makes a real difference.",
-    gradient: "from-emerald-600 to-emerald-700",
+    gradient: "from-primary-600 to-primary-800",
   },
 ];
 
 export default function AboutMission() {
   return (
-    <section className="relative py-6 lg:py-10">
-      <div className="absolute inset-0 bg-zinc-50" />
+    <section className="relative py-4 lg:py-8">
+      <div className="absolute inset-0 bg-transparent" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal className="mb-6">
           <SectionHeading
@@ -55,9 +55,9 @@ export default function AboutMission() {
           {cards.map((card, i) => (
             <Reveal key={card.title} y={30} delay={i * 0.12}>
               <motion.div
-                className="group relative h-full overflow-hidden rounded-2xl border border-zinc-200 bg-white p-8 shadow-[0_8px_30px_rgba(0,102,204,0.06)] transition-all duration-300 hover:border-primary-300 hover:shadow-[0_20px_50px_rgba(0,102,204,0.12)]"
+                className="group relative h-full overflow-hidden rounded-2xl border border-zinc-200 bg-white p-8 shadow-[0_8px_30px_rgba(0,102,204,0.06)] transition-all duration-300 hover:border-primary-300 hover:bg-primary-50/35 hover:shadow-[0_20px_50px_rgba(0,102,204,0.16)]"
               >
-                <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-gradient-to-br opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" style={{ background: "linear-gradient(135deg, var(--tw-gradient-from), var(--tw-gradient-to))" }} />
+                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary-100 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
 
                 <div className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${card.gradient} text-white shadow-lg`}>
                   {card.icon}

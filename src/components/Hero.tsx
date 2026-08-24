@@ -6,7 +6,6 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen overflow-hidden bg-night-950"
     >
-      {/* Background video — fills entire hero, responsive */}
       <video
         autoPlay
         muted

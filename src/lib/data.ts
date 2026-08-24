@@ -113,7 +113,7 @@ export const services = [
   },
   {
     icon: "cloud",
-    title: "Cloud Architecture & Next-Gen Infrastructure",
+    title: "Cloud Architecture & Infrastructure",
     description:
       "Scalable, secure, and flexible cloud solutions to power modern businesses and accelerate digital transformation.",
   },

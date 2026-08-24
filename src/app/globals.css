@@ -19,6 +19,7 @@
   --color-primary-700: #0052a3;
   --color-primary-800: #003d7a;
   --color-primary-900: #002952;
+  --color-primary-950: #001429;
 
   --color-accent-100: #e0f7fa;
   --color-accent-200: #b2ebf2;
@@ -109,6 +110,23 @@ body {
 
 .card-glass {
   @apply rounded-2xl border border-zinc-200 bg-white shadow-[0_10px_40px_rgba(0,102,204,0.07)] backdrop-blur-sm;
+}
+
+/* Alternating Home page canvas colors keep section spacing visually clear. */
+.home-sections > :not(:first-child):nth-child(even) {
+  background: #edf8ff;
+}
+
+.home-sections > :not(:first-child):nth-child(odd) {
+  background: #ffffff;
+}
+
+.about-sections > :not(:first-child):nth-child(even) {
+  background: #edf8ff;
+}
+
+.about-sections > :not(:first-child):nth-child(odd) {
+  background: #ffffff;
 }
 
 /* === Luminous blue curtain — left to right === */
@@ -226,68 +244,92 @@ body {
 .btn-curtain-up:hover::after { height: 100%; opacity: 0.5; }
 .btn-curtain-up:hover { color: #ffffff; box-shadow: 0 10px 35px rgba(0, 120, 231, 0.4); }
 
-/* === Hero optimized CSS animations (GPU composited) === */
-@keyframes heroFloat1 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(10px, -20px); }
+/* About Hero — GPU-composited animations */
+.hero-glow-upper {
+  position: absolute; top: -80px; left: -80px;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: rgba(0,128,204,0.2); filter: blur(160px);
+  animation: glowPulse1 14s ease-in-out infinite;
+  will-change: transform, opacity;
 }
-@keyframes heroFloat2 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-10px, 15px); }
+.hero-glow-lower {
+  position: absolute; bottom: 8%; right: 6%;
+  width: 384px; height: 384px; border-radius: 50%;
+  background: rgba(0,102,204,0.15); filter: blur(140px);
+  animation: glowPulse2 16s ease-in-out infinite 2s;
+  will-change: transform, opacity;
 }
-@keyframes heroPulse {
-  0%, 100% { opacity: 0.08; transform: scale(1); }
-  50% { opacity: 0.22; transform: scale(1.15); }
+.hero-glow-mid {
+  position: absolute; top: 45%; left: 55%;
+  width: 256px; height: 256px; border-radius: 50%;
+  background: rgba(0,128,204,0.1); filter: blur(100px);
+  animation: glowPulse3 11s ease-in-out infinite 5s;
+  will-change: transform, opacity;
 }
-@keyframes heroParticle {
-  0%, 100% { opacity: 0.2; transform: translate(0, 0); }
-  50% { opacity: 0.65; transform: translate(6px, -16px); }
+@keyframes glowPulse1 { 0%, 100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.3); opacity: 0.5; } }
+@keyframes glowPulse2 { 0%, 100% { transform: scale(1.3); opacity: 0.15; } 50% { transform: scale(1); opacity: 0.3; } }
+@keyframes glowPulse3 { 0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: 0.1; } 50% { transform: translate(-50%,-50%) scale(1.4); opacity: 0.22; } }
+
+.hero-ring { position: absolute; top: 50%; left: 50%; border-radius: 50%; border: 1px solid rgba(0,128,204,0.04); will-change: transform; }
+.hero-ring-1 { width: 500px; height: 500px; animation: ringSpin 30s linear infinite; }
+.hero-ring-2 { width: 650px; height: 650px; border-color: rgba(0,128,204,0.03); animation: ringSpinReverse 40s linear infinite; }
+@keyframes ringSpin { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(360deg); } }
+@keyframes ringSpinReverse { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(-360deg); } }
+
+.hero-particle { position: absolute; border-radius: 50%; will-change: transform; }
+.hp-1  { top:20%; left:15%; width:12px; height:12px; background:rgba(0,128,204,0.35); animation: pDrift 12s ease-in-out infinite; }
+.hp-2  { top:28%; left:80%; width:8px;  height:8px;  background:rgba(18,196,212,0.35); animation: pDrift 16s ease-in-out infinite 2s; }
+.hp-3  { top:65%; left:30%; width:10px; height:10px; background:rgba(102,179,255,0.25); animation: pDrift 10s ease-in-out infinite 4s; }
+.hp-4  { top:35%; left:90%; width:14px; height:14px; background:rgba(18,196,212,0.2);  animation: pDrift 14s ease-in-out infinite 1s; }
+.hp-5  { top:75%; left:65%; width:8px;  height:8px;  background:rgba(0,128,204,0.3);   animation: pDrift 11s ease-in-out infinite 3s; }
+.hp-6  { top:15%; left:55%; width:6px;  height:6px;  background:rgba(102,179,255,0.3);  animation: pDrift 13s ease-in-out infinite 5s; }
+.hp-7  { top:85%; left:45%; width:8px;  height:8px;  background:rgba(18,196,212,0.25); animation: pDrift 15s ease-in-out infinite 2.5s; }
+.hp-8  { top:10%; left:75%; width:6px;  height:6px;  background:rgba(0,128,204,0.3);   animation: pDrift 17s ease-in-out infinite 1.5s; }
+.hp-9  { top:50%; left:10%; width:10px; height:10px; background:rgba(18,196,212,0.2);  animation: pDrift 12s ease-in-out infinite 6s; }
+.hp-10 { top:90%; left:85%; width:7px;  height:7px;  background:rgba(0,128,204,0.25); animation: pDrift 14s ease-in-out infinite 3.5s; }
+@keyframes pDrift { 0%, 100% { transform: translateY(0) translateX(0); } 25% { transform: translateY(-18px) translateX(8px); } 50% { transform: translateY(-8px) translateX(-6px); } 75% { transform: translateY(-22px) translateX(4px); } }
+
+.hero-device { position: relative; }
+.laptop-float { animation: devFloat1 7s ease-in-out infinite; }
+.phone-float  { animation: devFloat2 6s ease-in-out infinite; }
+.tablet-float { animation: devFloat3 7.5s ease-in-out infinite; }
+@keyframes devFloat1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+@keyframes devFloat2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes devFloat3 { 0%, 100% { transform: translateY(0) translateX(0) rotate(5deg); } 50% { transform: translateY(-10px) translateX(8px) rotate(2deg); } }
+
+.hero-bar { will-change: opacity; animation: barPulse 3s ease-in-out infinite; }
+.hb-1 { animation-delay: 0s; } .hb-2 { animation-delay: 0.4s; } .hb-3 { animation-delay: 0.8s; }
+.hb-4 { animation-delay: 1.2s; } .hb-5 { animation-delay: 1.6s; } .hb-6 { animation-delay: 2s; }
+.pb-1 { animation-delay: 0s; } .pb-2 { animation-delay: 0.3s; } .pb-3 { animation-delay: 0.9s; } .pb-4 { animation-delay: 1.2s; }
+@keyframes barPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+.tech-icon { will-change: transform; }
+.ti-1 { animation: iconBob 5s ease-in-out infinite 0.5s; }
+.ti-2 { animation: iconBob 6s ease-in-out infinite 1s; }
+.ti-3 { animation: iconBob 4.5s ease-in-out infinite 2s; }
+.ti-4 { animation: iconBob 5.5s ease-in-out infinite 1.5s; }
+@keyframes iconBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+.hero-scroll-dot { animation: scrollBounce 2s ease-in-out infinite; }
+@keyframes scrollBounce { 0%, 100% { transform: translateY(0); opacity: 0.6; } 50% { transform: translateY(6px); opacity: 1; } }
+
+/* Team name: hidden by default, visible on hover (hover-capable devices only) */
+.team-name-hidden {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-@keyframes heroLine {
-  0%, 100% { opacity: 0.05; transform: scaleX(0.6); }
-  50% { opacity: 0.3; transform: scaleX(1); }
-}
-@keyframes heroSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-@keyframes heroSpinReverse {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
-}
-@keyframes heroArcSpin {
-  from { stroke-dashoffset: 0; }
-  to { stroke-dashoffset: -520; }
-}
-@keyframes heroArcSpinReverse {
-  from { stroke-dashoffset: 0; }
-  to { stroke-dashoffset: 440; }
-}
-@keyframes heroFloatSmall {
-  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) translateY(0); }
-  50% { opacity: 1; transform: translate(-50%, -50%) translateY(-8px); }
-}
-@keyframes heroBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
+@media (hover: hover) and (pointer: fine) {
+  .group:hover .team-name-hidden {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes heroLaptopFloat {
-  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
-  50% { transform: translate(-50%, -50%) translateY(-12px); }
-}
-@keyframes heroLaptopTilt {
-  0%, 100% { transform: rotateX(5deg) rotateY(-3deg); }
-  50% { transform: rotateX(8deg) rotateY(2deg); }
-}
-@keyframes heroBarPulse {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
-}
-
-/* Hero rotating text fade */
-@keyframes heroTextFade {
-  0%, 8% { opacity: 0; transform: translateY(10px); }
-  12%, 88% { opacity: 1; transform: translateY(0); }
-  92%, 100% { opacity: 0; transform: translateY(-10px); }
+/* Hardware acceleration for animated elements */
+.will-change-transform {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
 }

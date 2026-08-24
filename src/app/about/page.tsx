@@ -7,7 +7,6 @@ import AboutWhyChoose from "@/components/about/AboutWhyChoose";
 import AboutProcess from "@/components/about/AboutProcess";
 import AboutTech from "@/components/about/AboutTech";
 import AboutTeam from "@/components/about/AboutTeam";
-import AboutCTA from "@/components/about/AboutCTA";
 import Footer from "@/components/Footer";
 import Copyright from "@/components/Copyright";
 
@@ -16,7 +15,7 @@ export default function AboutPage() {
     <>
       <Loader />
       <Navbar />
-      <main className="relative">
+      <main className="about-sections relative bg-white">
         <AboutHero />
         <AboutStory />
         <AboutMission />
@@ -24,7 +23,6 @@ export default function AboutPage() {
         <AboutProcess />
         <AboutTech />
         <AboutTeam />
-        <AboutCTA />
       </main>
       <Footer />
       <Copyright />

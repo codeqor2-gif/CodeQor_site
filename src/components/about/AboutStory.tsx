@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 
 export default function AboutStory() {
   return (
-    <section id="story" className="relative py-6 lg:py-10">
+    <section id="story" className="relative py-4 lg:py-8">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal x={-40}>
@@ -20,8 +20,8 @@ export default function AboutStory() {
                   className="h-auto w-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-3 -right-3 rounded-xl border border-primary-200 bg-white/95 px-1 py-1 text-center shadow-[0_6px_20px_rgba(0,102,204,0.15)] backdrop-blur-md">
-                <p className="text-sm font-extrabold text-zinc-900">12+</p>
+              <div className="absolute -right-3 -top-3 rounded-xl border border-primary-200 bg-white/95 px-3 py-2 text-center shadow-[0_6px_20px_rgba(0,102,204,0.15)] backdrop-blur-md">
+                <p className="text-lg font-extrabold text-zinc-900">12+</p>
                 <p className="text-[9px] font-medium uppercase tracking-wider text-primary-600">Years of Excellence</p>
               </div>
             </div>
