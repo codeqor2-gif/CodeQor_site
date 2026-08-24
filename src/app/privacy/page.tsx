@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <section className="relative bg-zinc-50 py-24">
+    <section className="relative overflow-hidden bg-zinc-50 py-24">
       <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-72 w-[36rem] -translate-x-1/2 rounded-full bg-accent-400/20 blur-[130px]" />
 
       <div className="mx-auto max-w-4xl px-6 lg:px-10">

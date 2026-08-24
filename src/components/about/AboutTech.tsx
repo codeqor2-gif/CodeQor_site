@@ -98,7 +98,7 @@ export default function AboutTech() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-6 px-6 lg:grid-cols-2 lg:px-10">
         <div className="relative order-1 flex flex-col">
           <div className="pointer-events-none absolute -inset-6 rounded-3xl bg-gradient-to-tr from-primary-400/25 to-accent-400/20 blur-2xl" />
-          <div className="h-[260px] overflow-hidden rounded-2xl border border-zinc-200 shadow-[0_20px_60px_rgba(0,102,204,0.14)]">
+          <div className="relative h-[340px] overflow-hidden rounded-2xl border border-zinc-200 shadow-[0_20px_60px_rgba(0,102,204,0.14)] sm:h-[400px] lg:mt-2 lg:h-[480px]">
             <Image src="/imagetech.jpg" alt="Technology" fill className="object-cover rounded-2xl" sizes="(max-width: 1024px) 100vw, 50vw" priority />
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-night-950/60 to-transparent" />
             <div className="absolute bottom-5 left-5 rounded-2xl border border-white/15 bg-night-900/80 p-2 backdrop-blur-md">
@@ -113,8 +113,8 @@ export default function AboutTech() {
         </div>
 
         <div className="order-2 flex flex-col">
-          <SectionHeading title="Technologies &" highlight="Expertise" subtitle="We leverage modern technologies to build innovative, scalable solutions." headingClassName="md:text-2xl md:whitespace-nowrap" className="mb-0" />
-          <div className="mt-8">
+           <SectionHeading title="Technologies &" highlight="Expertise" subtitle="We leverage modern technologies to build innovative, scalable solutions." headingClassName="text-xl sm:text-2xl" className="mb-0" />
+           <div className="mt-7">
             <div ref={tabsRef} className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide snap-x snap-mandatory">
               {techTabs.map((tab, i) => (
                 <button key={tab} data-active={active === tab} onClick={() => setActive(tab)} className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold transition-all duration-300 snap-start cursor-pointer ${active === tab ? "bg-gradient-to-r from-primary-600 to-accent-600 text-white shadow-[0_4px_16px_rgba(0,102,204,0.4)]" : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-800"}`}>
@@ -129,7 +129,7 @@ export default function AboutTech() {
               </div>
             )}
           </div>
-          <div className="mt-8 h-[260px] overflow-hidden rounded-2xl border border-primary-200/80 bg-white/90 p-4 shadow-[0_10px_36px_rgba(0,102,204,0.1)] backdrop-blur-sm">
+          <div className="mt-5 min-h-[280px] rounded-2xl border border-primary-200/80 bg-white/90 p-4 shadow-[0_10px_36px_rgba(0,102,204,0.1)] backdrop-blur-sm">
             <AnimatePresence mode="wait">
               <motion.div key={active} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25, ease: "easeOut" }}>
                 <h3 className="text-lg font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent sm:text-xl">{techData[active].title}</h3>

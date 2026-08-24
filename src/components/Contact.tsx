@@ -64,7 +64,7 @@ export default function Contact() {
             <iframe
               title="Our location on Google Maps"
               src="https://www.google.com/maps?q=Easton,+Pennsylvania,+USA&output=embed"
-              className="h-full min-h-[380px] w-full"
+              className="h-[280px] w-full sm:h-[340px] lg:h-full lg:min-h-[380px]"
               style={{ border: 0 }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

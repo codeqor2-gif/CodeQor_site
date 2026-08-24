@@ -9,18 +9,7 @@ import Logo from "./Logo";
 const navItems = [
   { label: "Home", href: "/#home" },
   { label: "About Us", href: "/about" },
-  {
-    label: "Services",
-    href: "/#solutions",
-    children: [
-      { label: "Web Development", href: "/web-development" },
-      { label: "Mobile App Development", href: "/mobile-app-development" },
-      { label: "UI/UX Design", href: "/#solutions" },
-      { label: "Cloud Solutions", href: "/#solutions" },
-      { label: "Digital Marketing", href: "/digital-marketing" },
-      { label: "SEO Services", href: "/seo-services" },
-    ],
-  },
+  { label: "Services", href: "/services" },
   {
     label: "Products",
     href: "/#solutions",
@@ -154,6 +143,7 @@ export default function Navbar() {
           className="cursor-pointer rounded-lg border border-zinc-200 p-2 text-zinc-600 lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           {open ? <FiX size={22} /> : <FiMenu size={22} />}
         </button>
@@ -167,7 +157,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden border-t border-zinc-100 lg:hidden"
+            className="max-h-[calc(100svh-4rem)] overflow-y-auto border-t border-zinc-100 lg:hidden"
             style={{ background: "rgba(255,255,255,0.99)" }}
           >
             <div className="flex flex-col gap-1 px-6 py-4">
@@ -178,7 +168,7 @@ export default function Navbar() {
                       onClick={() => {
                         setOpen(false);
                       }}
-                      className={`cursor-pointer rounded-lg px-3 py-3 text-sm font-medium transition-colors ${
+                      className={`block w-full cursor-pointer rounded-lg px-3 py-3 text-sm font-medium transition-colors ${
                         navItem.children
                           ? "text-zinc-900 font-semibold"
                           : "text-zinc-600 hover:bg-primary-50 hover:text-primary-600"
