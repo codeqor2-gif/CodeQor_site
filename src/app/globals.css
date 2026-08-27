@@ -129,45 +129,6 @@ body {
   background: #ffffff;
 }
 
-/* Keep the dedicated Services page compact like Home and About. */
-.services-page > section {
-  padding-top: 2rem !important;
-  padding-bottom: 2rem !important;
-}
-
-.services-page > section:first-child {
-  padding-top: 6rem !important;
-}
-
-@media (min-width: 640px) {
-  .services-page > section {
-    padding-top: 2.5rem !important;
-    padding-bottom: 2.5rem !important;
-  }
-
-  .services-page > section:first-child {
-    padding-top: 7rem !important;
-  }
-}
-
-@media (min-width: 1024px) {
-  .services-page > section {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-  }
-
-  .services-page > section:first-child {
-    padding-top: 8rem !important;
-  }
-}
-
-/* Services page headings stay focused on the primary title only. */
-.services-page > section:nth-child(2) > div > div:first-child > p,
-.services-page > section:nth-child(3) > div > div:first-child > p,
-.services-page > section:nth-child(4) > div > div:first-child > p {
-  display: none;
-}
-
 /* === Luminous blue curtain — left to right === */
 .btn-curtain {
   position: relative;
