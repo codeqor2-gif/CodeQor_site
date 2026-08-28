@@ -9,7 +9,20 @@ import Logo from "./Logo";
 const navItems = [
   { label: "Home", href: "/#home" },
   { label: "About Us", href: "/about" },
-  { label: "Services", href: "/services" },
+  {
+    label: "Services",
+    href: "/services",
+    children: [
+      { label: "AI & Intelligent Automation", href: "/services/ai-intelligent-automation" },
+      { label: "Data Analytics & BI", href: "/services/data-analytics-business-intelligence" },
+      { label: "Cloud Solutions & Infrastructure", href: "/services/cloud-solutions-digital-infrastructure" },
+      { label: "Technology Talent & Team Expansion", href: "/services/technology-talent-team-expansion" },
+      { label: "Product Development & MVP", href: "/services/product-development-mvp-solutions" },
+      { label: "Digital Growth & Performance Marketing", href: "/services/digital-growth-performance-marketing" },
+      { label: "Digital Products & Experiences", href: "/services/digital-products-immersive-experiences" },
+      { label: "DevOps & Software Delivery", href: "/services/devops-software-delivery" },
+    ],
+  },
   {
     label: "Products",
     href: "/#solutions",
@@ -18,7 +31,6 @@ const navItems = [
       { label: "CapoBiz", href: "/#solutions" },
     ],
   },
-  { label: "Industries", href: "/#solutions" },
   { label: "Contact Us", href: "/#contactus" },
 ];
 
@@ -103,7 +115,9 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 8, scale: 0.96 }}
                       transition={{ duration: 0.15, ease: "easeOut" }}
-                      className="absolute left-0 top-full z-50 mt-1 w-56 overflow-hidden rounded-xl border border-zinc-100 bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.1)]"
+                      className={`absolute top-full z-50 mt-1 w-72 overflow-hidden rounded-xl border border-zinc-100 bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.1)] ${
+                        navItem.label === "Services" ? "right-0" : "left-0"
+                      }`}
                       onMouseEnter={() => handleDropdownEnter(navItem.label)}
                       onMouseLeave={handleDropdownLeave}
                     >
@@ -126,16 +140,6 @@ export default function Navbar() {
               </div>
             ))}
           </nav>
-
-          {/* Login */}
-          <div className="ml-3 border-l border-zinc-100 pl-3">
-            <Link
-              href="/#contactus"
-              className="inline-flex items-center rounded-full bg-gradient-to-r from-primary-600 to-accent-600 px-5 py-2 text-[13px] font-semibold text-white shadow-[0_4px_16px_rgba(0,102,204,0.3)] transition-all duration-300 hover:brightness-110 cursor-pointer"
-            >
-              Login
-            </Link>
-          </div>
         </div>
 
         {/* Mobile toggle */}
@@ -192,13 +196,6 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
-              <Link
-                href="/#contactus"
-                onClick={() => setOpen(false)}
-                className="mt-2 inline-block rounded-full bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 text-center text-sm font-semibold text-white"
-              >
-                Login
-              </Link>
             </div>
           </motion.div>
         )}

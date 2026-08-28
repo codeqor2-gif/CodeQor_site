@@ -20,9 +20,9 @@ export default function AboutStory() {
                   className="h-auto w-full object-cover"
                 />
               </div>
-              <div className="absolute -right-3 -top-3 rounded-xl border border-primary-200 bg-white/95 px-3 py-2 text-center shadow-[0_6px_20px_rgba(0,102,204,0.15)] backdrop-blur-md">
+              <div className="absolute -right-3 -top-3 rounded-2xl border border-primary-300 bg-white/95 px-3 py-1 text-center shadow-[0_10px_30px_rgba(0,102,204,0.2)] backdrop-blur-md">
                 <p className="text-lg font-extrabold text-zinc-900">12+</p>
-                <p className="text-[9px] font-medium uppercase tracking-wider text-primary-600">Years of Excellence</p>
+                <p className="text-[9px] font-medium uppercase tracking-wider text-primary-600">Legacy</p>
               </div>
             </div>
           </Reveal>

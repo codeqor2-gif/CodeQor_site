@@ -73,9 +73,9 @@ export default function AboutTeam() {
                           key={social.label}
                           href={social.href}
                           aria-label={social.label}
-                          className={`flex h-7 w-7 items-center justify-center rounded-full border backdrop-blur-sm transition-all duration-200 ${social.bg} ${social.hover}`}
+                          className={`flex h-9 w-9 items-center justify-center rounded-full border backdrop-blur-sm transition-all duration-200 ease-out hover:scale-125 ${social.bg} ${social.hover}`}
                         >
-                          <social.icon size={12} />
+                          <social.icon size={15} />
                         </a>
                       ))}
                     </div>
