@@ -4,6 +4,11 @@ import ServiceDetail from "@/components/services/ServiceDetail";
 import AiIntelligentAutomation from "@/components/services/AiIntelligentAutomation";
 import DataAnalyticsBI from "@/components/services/DataAnalyticsBI";
 import CloudSolutionsInfrastructure from "@/components/services/CloudSolutionsInfrastructure";
+import TechTalentTeamExpansion from "@/components/services/TechTalentTeamExpansion";
+import ProductDevelopmentMVP from "@/components/services/ProductDevelopmentMVP";
+import DigitalGrowthMarketing from "@/components/services/DigitalGrowthMarketing";
+import DigitalProductsExperiences from "@/components/services/DigitalProductsExperiences";
+import DevOpsSoftwareDelivery from "@/components/services/DevOpsSoftwareDelivery";
 import Footer from "@/components/Footer";
 import Copyright from "@/components/Copyright";
 import { services } from "@/components/services/servicesData";
@@ -25,11 +30,16 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   const isAI = slug === "ai-intelligent-automation";
   const isBI = slug === "data-analytics-business-intelligence";
   const isCloud = slug === "cloud-solutions-digital-infrastructure";
+  const isTalent = slug === "technology-talent-team-expansion";
+  const isProduct = slug === "product-development-mvp-solutions";
+  const isGrowth = slug === "digital-growth-performance-marketing";
+  const isDigitalProducts = slug === "digital-products-immersive-experiences";
+  const isDevOps = slug === "devops-software-delivery";
   return (
     <>
       <Loader />
       <Navbar />
-      {isAI ? <AiIntelligentAutomation /> : isBI ? <DataAnalyticsBI /> : isCloud ? <CloudSolutionsInfrastructure /> : <ServiceDetail slug={slug} />}
+      {isAI ? <AiIntelligentAutomation /> : isBI ? <DataAnalyticsBI /> : isCloud ? <CloudSolutionsInfrastructure /> : isTalent ? <TechTalentTeamExpansion /> : isProduct ? <ProductDevelopmentMVP /> : isGrowth ? <DigitalGrowthMarketing /> : isDigitalProducts ? <DigitalProductsExperiences /> : isDevOps ? <DevOpsSoftwareDelivery /> : <ServiceDetail slug={slug} />}
       <Footer />
       <Copyright />
     </>

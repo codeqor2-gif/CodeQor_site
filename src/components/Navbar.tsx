@@ -31,7 +31,6 @@ const navItems = [
       { label: "CapoBiz", href: "/#solutions" },
     ],
   },
-  { label: "Contact Us", href: "/#contactus" },
 ];
 
 export default function Navbar() {
@@ -78,8 +77,8 @@ export default function Navbar() {
           <Logo />
         </Link>
 
-        {/* Nav items — right */}
-        <div className="hidden items-center gap-1 lg:flex">
+        {/* Nav items — center */}
+        <div className="hidden lg:flex flex-1 items-center justify-center">
           <nav className="flex items-center gap-1">
             {navItems.map((navItem) => (
               <div
@@ -142,6 +141,16 @@ export default function Navbar() {
           </nav>
         </div>
 
+        {/* Contact button — right */}
+        <div className="hidden shrink-0 lg:block">
+          <Link
+            href="/#contactus"
+            className="inline-flex items-center rounded-full bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-2.5 text-[13px] font-semibold text-white shadow-[0_4px_16px_rgba(0,102,204,0.3)] transition-all duration-300 hover:brightness-110 cursor-pointer"
+          >
+            Contact Us
+          </Link>
+        </div>
+
         {/* Mobile toggle */}
         <button
           className="cursor-pointer rounded-lg border border-zinc-200 p-2 text-zinc-600 lg:hidden"
@@ -196,6 +205,13 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
+              <Link
+                href="/#contactus"
+                onClick={() => setOpen(false)}
+                className="mt-2 inline-block rounded-full bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 text-center text-sm font-semibold text-white"
+              >
+                Contact Us
+              </Link>
             </div>
           </motion.div>
         )}
