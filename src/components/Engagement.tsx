@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaDollarSign, FaUsers, FaHistory, FaArrowRight } from "react-icons/fa";
-import { engagementModels, unsplashImages } from "@/lib/data";
+import { engagementModels } from "@/lib/data";
 import Reveal from "./Reveal";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -48,7 +48,7 @@ export default function Engagement() {
               <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary-400/25 to-accent-400/20 blur-2xl" />
               <div className="relative overflow-hidden rounded-2xl border border-zinc-200 shadow-[0_16px_50px_rgba(0,102,204,0.14)]">
                 <Image
-                  src={unsplashImages.team}
+                  src="/images/engaging2model.jpg"
                   alt="Team meeting"
                   width={800}
                   height={600}

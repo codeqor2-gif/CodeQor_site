@@ -48,7 +48,7 @@ const reasons = [
       </svg>
     ),
     title: "Scalable Solutions",
-    description: "Architecture designed for growth — our solutions handle increasing loads without costly rewrites.",
+    description: "Architecture designed for growth our solutions handle increasing loads without costly rewrites.",
   },
   {
     icon: (

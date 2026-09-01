@@ -102,7 +102,7 @@ export default function ProductDevelopmentMVP() {
               <div className="relative">
                 <div className="absolute -inset-5 rounded-[2.5rem]" style={{ background: "radial-gradient(ellipse at center, rgba(0,102,204,0.16) 0%, transparent 70%)" }} />
                 <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 shadow-[0_28px_70px_rgba(0,102,204,0.16)]">
-                  <Image src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1200&auto=format&fit=crop" alt="Product development and MVP" width={800} height={600} className="aspect-[4/3] h-auto w-full object-cover" />
+                  <Image src="/images/introMVP2.jpg" alt="Product development and MVP" width={800} height={600} className="aspect-[4/3] h-auto w-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-night-950/55 via-night-950/10 to-transparent" />
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary-500/30 via-transparent to-accent-400/20 mix-blend-multiply" />
                   <div className="absolute left-6 top-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 text-xl text-white shadow-[0_10px_26px_rgba(0,102,204,0.45)] ring-1 ring-white/30"><FaRocket /></div>
@@ -160,7 +160,7 @@ export default function ProductDevelopmentMVP() {
               <div className="relative">
                 <div className="absolute -inset-4 rounded-3xl" style={{ background: "radial-gradient(ellipse at center, rgba(0,102,204,0.16) 0%, transparent 70%)" }} />
                 <div className="relative overflow-hidden rounded-[1.75rem] border border-slate-200 shadow-[0_20px_60px_rgba(0,102,204,0.14)]">
-                  <Image src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" alt="Product team building MVP" width={800} height={600} className="aspect-[16/10] h-auto w-full object-cover" />
+                  <Image src="/images/benefitsOfMVP.jpg" alt="Product team building MVP" width={800} height={600} className="aspect-[16/10] h-auto w-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-night-950/45 via-transparent to-transparent" />
                   <div className="absolute left-6 top-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 text-xl text-white shadow-[0_8px_22px_rgba(0,102,204,0.4)]"><FaRocket /></div>
                 </div>

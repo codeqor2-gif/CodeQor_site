@@ -82,7 +82,10 @@
   &::-webkit-scrollbar { display: none; }
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 body {
   @apply bg-zinc-50 text-zinc-700 antialiased;
@@ -91,6 +94,7 @@ body {
     radial-gradient(ellipse 60% 45% at 100% 15%, rgba(18, 196, 212, 0.06), transparent),
     radial-gradient(ellipse 55% 45% at 50% 115%, rgba(0, 128, 204, 0.07), transparent);
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 ::selection { background-color: rgba(0, 102, 204, 0.25); color: #172554; }

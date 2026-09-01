@@ -8,7 +8,7 @@ export default function ContactForm() {
   return (
     <section className="relative py-6" style={{ background: "#F8FAFC" }}>
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_1fr] lg:gap-8">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[52%_1fr] lg:gap-10">
           {/* Left — IT Image (Engagement style) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -20,7 +20,7 @@ export default function ContactForm() {
             <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary-400/25 to-accent-400/20 blur-2xl" />
             <div className="relative overflow-hidden rounded-2xl border border-zinc-200 shadow-[0_16px_50px_rgba(0,102,204,0.14)] h-full min-h-[340px]">
               <Image
-                src="/formimage.jpg"
+                src="/images/form.jpg"
                 alt="Modern office workspace"
                 fill
                 className="object-cover"

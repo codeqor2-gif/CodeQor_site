@@ -51,8 +51,8 @@ export default function Contact() {
           </h2>
         </motion.div>
 
-        {/* 2-column: Map left 40%, Cards right 60% */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[40%_1fr] lg:gap-10">
+        {/* 2-column: Map left 52%, Cards right */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[52%_1fr] lg:gap-10">
           {/* Left — Map */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}

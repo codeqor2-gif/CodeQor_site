@@ -102,7 +102,7 @@ export default function DigitalProductsExperiences() {
               <div className="relative">
                 <div className="absolute -inset-5 rounded-[2.5rem]" style={{ background: "radial-gradient(ellipse at center, rgba(0,102,204,0.16) 0%, transparent 70%)" }} />
                 <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 shadow-[0_28px_70px_rgba(0,102,204,0.16)]">
-                  <Image src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop" alt="Digital product on mobile" width={800} height={600} className="aspect-[4/3] h-auto w-full object-cover" />
+                  <Image src="/images/IntroDigitalProduct.jpg" alt="Digital product on mobile" width={800} height={600} className="aspect-[4/3] h-auto w-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-night-950/55 via-night-950/10 to-transparent" />
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary-500/30 via-transparent to-accent-400/20 mix-blend-multiply" />
                   <div className="absolute left-6 top-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 text-xl text-white shadow-[0_10px_26px_rgba(0,102,204,0.45)] ring-1 ring-white/30"><FaMobileAlt /></div>
@@ -160,7 +160,7 @@ export default function DigitalProductsExperiences() {
               <div className="relative">
                 <div className="absolute -inset-4 rounded-3xl" style={{ background: "radial-gradient(ellipse at center, rgba(0,102,204,0.16) 0%, transparent 70%)" }} />
                 <div className="relative overflow-hidden rounded-[1.75rem] border border-slate-200 shadow-[0_20px_60px_rgba(0,102,204,0.14)]">
-                  <Image src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=1200&auto=format&fit=crop" alt="Product team collaborating" width={800} height={600} className="aspect-[4/3] h-auto w-full object-cover" />
+                  <Image src="/images/BenefitsDigitalProducts.jpg" alt="Product team collaborating" width={800} height={600} className="aspect-[4/3] h-auto w-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-night-950/45 via-transparent to-transparent" />
                   <div className="absolute left-6 top-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 text-xl text-white shadow-[0_8px_22px_rgba(0,102,204,0.4)]"><FaChartLine /></div>
                 </div>

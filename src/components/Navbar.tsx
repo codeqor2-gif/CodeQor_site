@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import Logo from "./Logo";
@@ -31,13 +32,35 @@ const navItems = [
       { label: "CapoBiz", href: "/#solutions" },
     ],
   },
+  { label: "Industries", href: "/industries" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const isActive = (href: string) => {
+    const clean = href.split("#")[0];
+    if (!clean) return false;
+    // On the home route, only "Home" is the page-level active item.
+    // Section-scroll links like Products (/#solutions) have no route and stay inactive.
+    if (clean === "/") return pathname === "/" && !href.includes("#solutions");
+    // For services, child routes (/services/xyz) keep "Services" active.
+    if (clean === "/services" && pathname.startsWith("/services")) return true;
+    return pathname === clean;
+  };
+
+  // Style for dropdown child links: active when on that exact service route.
+  const childActive = (href: string) => {
+    const clean = href.split("#")[0];
+    if (!clean) return false;
+    if (href.includes("#solutions")) return false;
+    if (clean === "/services" && pathname === "/services") return false;
+    return pathname === clean;
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -71,7 +94,7 @@ export default function Navbar() {
         {/* Logo — left */}
         <Link
           href="/#home"
-          className="shrink-0"
+          className="shrink-0 transition-transform duration-300 ease-out hover:scale-[1.05] active:scale-100"
           aria-label="CodeQor Technologies home"
         >
           <Logo />
@@ -93,7 +116,11 @@ export default function Navbar() {
                     setOpen(false);
                     setActiveDropdown(null);
                   }}
-                  className="group relative flex items-center gap-1 rounded-lg px-3 py-2 text-[14px] font-medium text-zinc-600 transition-all duration-200 hover:bg-primary-50 hover:text-primary-600 cursor-pointer"
+                  className={`group relative flex items-center gap-1 rounded-lg px-3 py-2 text-[14px] font-medium transition-all duration-200 cursor-pointer ${
+                    isActive(navItem.href)
+                      ? "bg-primary-50 text-primary-600 font-semibold"
+                      : "text-zinc-600 hover:bg-primary-50 hover:text-primary-600"
+                  }`}
                 >
                   {navItem.label}
                   {navItem.children && (
@@ -128,7 +155,11 @@ export default function Navbar() {
                             setOpen(false);
                             setActiveDropdown(null);
                           }}
-                          className="block px-4 py-2.5 text-[13px] font-medium text-zinc-600 transition-colors hover:bg-primary-50 hover:text-primary-600"
+                          className={`block px-4 py-2.5 text-[13px] font-medium transition-colors ${
+                            childActive(child.href)
+                              ? "bg-primary-50 text-primary-600 font-semibold"
+                              : "text-zinc-600 hover:bg-primary-50 hover:text-primary-600"
+                          }`}
                         >
                           {child.label}
                         </Link>
@@ -144,7 +175,7 @@ export default function Navbar() {
         {/* Contact button — right */}
         <div className="hidden shrink-0 lg:block">
           <Link
-            href="/#contactus"
+            href="/contact"
             className="inline-flex items-center rounded-full bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-2.5 text-[13px] font-semibold text-white shadow-[0_4px_16px_rgba(0,102,204,0.3)] transition-all duration-300 hover:brightness-110 cursor-pointer"
           >
             Contact Us
@@ -183,7 +214,11 @@ export default function Navbar() {
                       }}
                       className={`block w-full cursor-pointer rounded-lg px-3 py-3 text-sm font-medium transition-colors ${
                         navItem.children
-                          ? "text-zinc-900 font-semibold"
+                          ? isActive(navItem.href)
+                            ? "text-primary-600 font-semibold"
+                            : "text-zinc-900 font-semibold"
+                          : isActive(navItem.href)
+                          ? "bg-primary-50 text-primary-600 font-semibold"
                           : "text-zinc-600 hover:bg-primary-50 hover:text-primary-600"
                       }`}
                     >
@@ -196,7 +231,11 @@ export default function Navbar() {
                           key={child.label}
                           href={child.href}
                           onClick={() => setOpen(false)}
-                          className="cursor-pointer rounded-lg px-3 py-2 text-[13px] text-zinc-500 transition-colors hover:bg-primary-50 hover:text-primary-600"
+                          className={`cursor-pointer rounded-lg px-3 py-2 text-[13px] transition-colors ${
+                            childActive(child.href)
+                              ? "bg-primary-50 text-primary-600 font-semibold"
+                              : "text-zinc-500 hover:bg-primary-50 hover:text-primary-600"
+                          }`}
                         >
                           {child.label}
                         </Link>
@@ -206,7 +245,7 @@ export default function Navbar() {
                 </div>
               ))}
               <Link
-                href="/#contactus"
+                href="/contact"
                 onClick={() => setOpen(false)}
                 className="mt-2 inline-block rounded-full bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 text-center text-sm font-semibold text-white"
               >

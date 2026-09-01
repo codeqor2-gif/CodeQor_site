@@ -9,7 +9,7 @@ export default function Hero() {
       <video
         autoPlay
         muted
-        loop
+        loop    
         playsInline
         preload="auto"
         crossOrigin="anonymous"
@@ -19,7 +19,8 @@ export default function Hero() {
           objectPosition: "center center",
           filter: "brightness(1.1) contrast(1.05) saturate(1.15)",
         }}
-        src="/VideoHS.mp4"
+        src="https://res.cloudinary.com/gobrmjsr/video/upload/v1788171874/VideoHS.mp4"
+        
       />
       <div
         className="absolute inset-0 pointer-events-none"

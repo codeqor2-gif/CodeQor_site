@@ -23,7 +23,7 @@ const cards = [
       </svg>
     ),
     title: "Our Vision",
-    description: "To be the most trusted technology partner for businesses worldwide — recognized for innovation, quality, and the lasting value we create for our clients.",
+    description: "To be the most trusted technology partner for businesses worldwide recognized for innovation, quality, and the lasting value we create for our clients.",
     gradient: "from-primary-600 to-primary-800",
   },
   {
@@ -45,7 +45,7 @@ export default function AboutMission() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal className="mb-6">
           <SectionHeading
-            title="Mission, Vision &"
+            title="Mission &"
             highlight="Values"
            
           />

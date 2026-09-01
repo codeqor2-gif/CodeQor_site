@@ -61,11 +61,11 @@ export default function AboutTeam() {
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
-                  {/* Dark overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-night-950/80 via-night-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Dark overlay (always on mobile, on hover at desktop) */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-night-950/80 via-night-950/20 to-transparent lg:opacity-0 lg:group-hover:opacity-100 lg:transition-opacity lg:duration-300" />
 
-                  {/* Name + Social — hidden by default, shown on hover */}
-                  <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-2 px-4 pb-5 pt-10 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                  {/* Name + Social — always visible on mobile, revealed on hover at desktop */}
+                  <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-2 px-4 pb-5 pt-10 lg:translate-y-3 lg:opacity-0 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:transition-all lg:duration-300 lg:ease-out">
                     <h3 className="text-base font-bold text-white text-center">{member.name}</h3>
                     <div className="flex items-center gap-2.5">
                       {socialLinks.map((social) => (
