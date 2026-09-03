@@ -1,17 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";
 import { achievements } from "@/lib/data";
 import Counter from "./Counter";
 import Reveal from "./Reveal";
 
 export default function Achievements() {
-  const scrollToContact = () => {
-    const el = document.getElementById("contactus");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section id="about" className="relative overflow-hidden py-10">
       <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-60 w-[36rem] -translate-x-1/2 rounded-full bg-primary-400/15 blur-[100px]" />
@@ -26,12 +22,12 @@ export default function Achievements() {
           
           </div>
           <Reveal delay={0.1}>
-            <button
-              onClick={scrollToContact}
+            <Link
+              href="/contact"
               className="group inline-flex shrink-0 items-center gap-2 rounded-md bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(0,102,204,0.4)] transition-all duration-300 hover:brightness-110 cursor-pointer"
             >
               Get in Touch
-            </button>
+            </Link>
           </Reveal>
         </Reveal>
 
