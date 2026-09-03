@@ -1,7 +1,7 @@
 import type { ElementType } from "react";
 import {
   FaIndustry, FaTruck, FaHeartbeat, FaLandmark, FaShoppingBag,
-  FaGraduationCap, FaNetworkWired,
+  FaGraduationCap, FaNetworkWired, FaBolt, FaCarSide,
 } from "react-icons/fa";
 
 export type Industry = {
@@ -53,5 +53,17 @@ export const industries: Industry[] = [
     title: "Telecom & IT Services",
     description: "Connecting people and businesses through IT excellence.",
     image: "/images/Telecom%20&%20IT%20Services.jpg",
+  },
+  {
+    icon: FaBolt,
+    title: "Energy & Utilities",
+    description: "Smart grid monitoring, renewable energy management, and IoT-based solutions.",
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1200&auto=format&fit=crop",
+  },
+  {
+    icon: FaCarSide,
+    title: "Automotive & Mobility",
+    description: "Connected vehicles, digital retail, financing platforms, and fleet solutions.",
+    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop",
   },
 ];

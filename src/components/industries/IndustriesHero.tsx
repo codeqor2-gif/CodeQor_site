@@ -13,7 +13,7 @@ export default function IndustriesHero() {
         preload="auto"
         className="absolute inset-0 h-full w-full object-cover object-center"
         style={{ filter: "brightness(1.08) contrast(1.04) saturate(1.12)" }}
-        src="/TechnolgyIndus.mp4"
+        src="/TechnologyH.mp4"
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-night-950/70 via-night-950/30 to-transparent" />
       <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse at center, transparent 52%, rgba(2,8,23,0.45) 100%)" }} />

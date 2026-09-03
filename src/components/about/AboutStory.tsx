@@ -11,13 +11,13 @@ export default function AboutStory() {
           <Reveal x={-40}>
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary-400/20 to-accent-400/15 blur-2xl" />
-              <div className="relative overflow-hidden rounded-3xl border border-zinc-200 shadow-[0_20px_60px_rgba(0,102,204,0.12)]">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-zinc-200 shadow-[0_20px_60px_rgba(0,102,204,0.12)]">
                 <Image
-                  src="/images/AboutTech2.jpg"
+                  src="/images/Techonology.jpg"
                   alt="CodeQor team collaboration"
-                  width={800}
-                  height={600}
-                  className="h-auto w-full object-cover"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
                 />
               </div>
               <div className="absolute -right-3 -top-3 rounded-2xl border border-primary-300 bg-white/95 px-3 py-1 text-center shadow-[0_10px_30px_rgba(0,102,204,0.2)] backdrop-blur-md">

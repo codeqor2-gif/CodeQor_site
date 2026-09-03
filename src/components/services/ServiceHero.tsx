@@ -29,8 +29,7 @@ export default function ServiceHero({ title, highlight, tagline }: { title: stri
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
         <div>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }} className="text-4xl font-bold leading-[1.05] tracking-[-0.045em] text-white sm:text-6xl lg:text-[4.2rem]">{title} <span className="bg-gradient-to-r from-sky-200 via-white to-sky-300 bg-clip-text text-transparent">{highlight}</span></motion.h1>
-          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="mt-8 inline-flex items-center gap-3 rounded-full border border-sky-300/20 bg-white/[0.06] px-5 py-3 backdrop-blur-md">
-            <span className="relative flex h-2.5 w-2.5"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-300 opacity-75" /><span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-sky-300" /></span>
+          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="mt-8 inline-flex items-center rounded-full border border-sky-300/20 bg-white/[0.06] px-5 py-3 backdrop-blur-md">
             <span className="text-sm font-medium text-white/90">{tagline}</span>
           </motion.div>
         </div>

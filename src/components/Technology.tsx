@@ -134,7 +134,7 @@ export default function Technology() {
           <div className="pointer-events-none absolute -inset-6 rounded-3xl bg-gradient-to-tr from-primary-400/25 to-accent-400/20 blur-2xl" />
           <div className="h-[260px] overflow-hidden rounded-2xl border border-zinc-200 shadow-[0_20px_60px_rgba(0,102,204,0.14)]">
             <Image
-              src="/images/techhome.jpg"
+              src="/images/Tabs.jpg"
               alt="Technology illustration"
               fill
               className="object-cover rounded-2xl"

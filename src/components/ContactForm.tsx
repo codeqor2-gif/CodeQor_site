@@ -20,7 +20,7 @@ export default function ContactForm() {
             <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary-400/25 to-accent-400/20 blur-2xl" />
             <div className="relative overflow-hidden rounded-2xl border border-zinc-200 shadow-[0_16px_50px_rgba(0,102,204,0.14)] h-full min-h-[340px]">
               <Image
-                src="/images/form.jpg"
+                src="/images/NewForm.jpg"
                 alt="Modern office workspace"
                 fill
                 className="object-cover"
