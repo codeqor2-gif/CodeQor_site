@@ -110,29 +110,6 @@ const fallbackLogo = (
 export default function Technology() {
   const [active, setActive] = useState(techTabs[0]);
   const tabsRef = useRef<HTMLDivElement>(null);
-  const indicatorRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [showIndicator, setShowIndicator] = useState(false);
-
-  const updateIndicator = useCallback(() => {
-    const el = tabsRef.current;
-    if (!el) return;
-    const progress = el.scrollLeft / (el.scrollWidth - el.clientWidth);
-    setScrollProgress(progress);
-    setShowIndicator(el.scrollWidth > el.clientWidth + 4);
-  }, []);
-
-  useEffect(() => {
-    const el = tabsRef.current;
-    if (!el) return;
-    updateIndicator();
-    el.addEventListener("scroll", updateIndicator, { passive: true });
-    window.addEventListener("resize", updateIndicator);
-    return () => {
-      el.removeEventListener("scroll", updateIndicator);
-      window.removeEventListener("resize", updateIndicator);
-    };
-  }, [updateIndicator]);
 
   const scrollToActive = useCallback(() => {
     const el = tabsRef.current;
@@ -157,7 +134,7 @@ export default function Technology() {
           <div className="pointer-events-none absolute -inset-6 rounded-3xl bg-gradient-to-tr from-primary-400/25 to-accent-400/20 blur-2xl" />
           <div className="h-[260px] overflow-hidden rounded-2xl border border-zinc-200 shadow-[0_20px_60px_rgba(0,102,204,0.14)]">
             <Image
-              src="/images/imagetech.jpg"
+              src="/images/techhome.jpg"
               alt="Technology illustration"
               fill
               className="object-cover rounded-2xl"
@@ -189,38 +166,33 @@ export default function Technology() {
           <div className="mt-8">
             <div
               ref={tabsRef}
-              className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide snap-x snap-mandatory"
+              className="flex w-full gap-1 overflow-x-auto rounded-lg border border-zinc-200 bg-zinc-100/70 p-1 scrollbar-hide"
             >
               {techTabs.map((tab, i) => (
                 <button
                   key={tab}
                   data-active={active === tab}
                   onClick={() => setActive(tab)}
-                  className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold transition-all duration-300 snap-start cursor-pointer ${
+                  className={`relative flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md px-4 py-2 text-xs font-semibold transition-colors duration-300 snap-start cursor-pointer ${
                     active === tab
-                      ? "bg-gradient-to-r from-primary-600 to-accent-600 text-white shadow-[0_4px_16px_rgba(0,102,204,0.4)]"
-                      : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-800"
+                      ? "text-white"
+                      : "text-zinc-600 hover:text-zinc-900"
                   }`}
                 >
-                  <span className="text-sm">{icons[i]}</span>
-                  {tab}
+                  {active === tab && (
+                    <motion.span
+                      layoutId="tech-tab-pill"
+                      className="absolute inset-0 rounded-md bg-gradient-to-r from-primary-600 to-accent-600 shadow-[0_4px_16px_rgba(0,102,204,0.4)]"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10 flex items-center gap-1.5">
+                    <span className="text-sm">{icons[i]}</span>
+                    {tab}
+                  </span>
                 </button>
               ))}
             </div>
-
-            {/* Scroll indicator */}
-            {showIndicator && (
-              <div className="relative mt-2 h-1 w-full overflow-hidden rounded-full bg-zinc-100">
-                <div
-                  ref={indicatorRef}
-                  className="absolute top-0 left-0 h-full rounded-full bg-gradient-to-r from-primary-500 to-accent-500 transition-all duration-150"
-                  style={{
-                    width: `${Math.max(25, 25 + scrollProgress * 75)}%`,
-                    left: `${scrollProgress * (100 - Math.max(25, 25 + scrollProgress * 75))}%`,
-                  }}
-                />
-              </div>
-            )}
           </div>
 
           {/* Content card */}

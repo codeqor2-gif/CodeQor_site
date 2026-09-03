@@ -25,7 +25,7 @@ export default function Loader() {
       transition={{ duration: 0.6, ease: "easeInOut" }}
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center"
       style={{
-        background: "radial-gradient(circle at center, #11C5E8 0%, #0AAFE0 25%, #0078E7 60%, #0052CC 100%)",
+        background: "radial-gradient(circle at center, #43B2F2 0%, #2E9FE8 25%, #0078E7 60%, #0052CC 100%)",
         willChange: "opacity",
       }}
       aria-busy="true"
@@ -43,7 +43,7 @@ export default function Loader() {
         <defs>
           <linearGradient id="loaderGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
             <stop stopColor="#123b82" />
-            <stop offset="0.52" stopColor="#0066cc" />
+            <stop offset="0.52" stopColor="#0a6fd0" />
             <stop offset="1" stopColor="#0aa9d1" />
           </linearGradient>
           <filter id="loaderGlow" x="-30%" y="-30%" width="160%" height="160%">

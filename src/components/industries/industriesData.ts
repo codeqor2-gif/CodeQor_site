@@ -34,24 +34,24 @@ export const industries: Industry[] = [
     icon: FaLandmark,
     title: "Banks & Insurance",
     description: "Secure and reliable banking and insurance services.",
-    image: "https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/BankingandFinance.jpg",
   },
   {
     icon: FaShoppingBag,
     title: "Retail & E-commerce",
     description: "Transforming retail experiences with innovative tech.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/Retail%20&%20E-commerce.jpg",
   },
   {
     icon: FaGraduationCap,
     title: "Education & eLearning",
     description: "Empowering learning through modern digital solutions.",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/Education%20&%20eLearning.jpg",
   },
   {
     icon: FaNetworkWired,
     title: "Telecom & IT Services",
     description: "Connecting people and businesses through IT excellence.",
-    image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/Telecom%20&%20IT%20Services.jpg",
   },
 ];

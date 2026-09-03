@@ -19,7 +19,7 @@ export default function TermsPage() {
         </Link>
 
         <h1 className="text-4xl font-bold text-zinc-900 sm:text-5xl">
-          Terms & <span className="text-gradient">Conditions</span>
+          Terms & <span className="text-primary-600">Conditions</span>
         </h1>
         <p className="mt-4 text-sm text-zinc-500">Last updated: August 17, 2026</p>
 

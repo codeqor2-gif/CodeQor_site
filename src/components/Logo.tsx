@@ -4,9 +4,9 @@ export default function Logo({ compact = false, light = false }: { compact?: boo
       <svg width="40" height="40" viewBox="0 0 48 48" fill="none" aria-hidden="true">
         <defs>
           <linearGradient id="logoGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#33a1de" />
-            <stop offset="0.55" stopColor="#0066cc" />
-            <stop offset="1" stopColor="#12c4d4" />
+            <stop stopColor="#0756a8" />
+            <stop offset="0.55" stopColor="#0a6fd0" />
+            <stop offset="1" stopColor="#054486" />
           </linearGradient>
         </defs>
         <rect width="48" height="48" rx="13" fill="url(#logoGrad)" />
@@ -19,7 +19,7 @@ export default function Logo({ compact = false, light = false }: { compact?: boo
       {!compact && (
         <div className="leading-none">
           <p className={`text-lg font-bold tracking-tight ${light ? "text-white" : "text-zinc-900"}`}>
-            Code<span className={light ? "text-[#5CE1E6]" : "text-[#12C4D4]"}>Qor</span>
+            Code<span className={light ? "text-[#8BD4FA]" : "text-[#35A6EF]"}>Qor</span>
           </p>
           <p className={`mt-0.5 text-[10px] font-medium uppercase tracking-[0.3em] ${light ? "text-white/70" : "text-primary-600"}`}>
             Technologies

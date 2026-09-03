@@ -13,7 +13,7 @@ export default function AboutStory() {
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary-400/20 to-accent-400/15 blur-2xl" />
               <div className="relative overflow-hidden rounded-3xl border border-zinc-200 shadow-[0_20px_60px_rgba(0,102,204,0.12)]">
                 <Image
-                  src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1200&auto=format&fit=crop"
+                  src="/images/AboutTech2.jpg"
                   alt="CodeQor team collaboration"
                   width={800}
                   height={600}

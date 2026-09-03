@@ -42,7 +42,7 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden">
-      {/* Deep cyan-blue gradient background */}
+      {/* Deep sky-blue gradient background */}
       <div
         className="absolute inset-0"
         style={{
@@ -54,7 +54,7 @@ export default function Footer() {
       {/* Ambient glows */}
       <div
         className="absolute -left-48 -top-48 h-[550px] w-[550px] rounded-full opacity-[0.12]"
-        style={{ background: "radial-gradient(circle, #11C5E8, transparent 65%)" }}
+        style={{ background: "radial-gradient(circle, #43B2F2, transparent 65%)" }}
       />
       <div
         className="absolute -bottom-48 -right-48 h-[500px] w-[500px] rounded-full opacity-[0.10]"
@@ -62,12 +62,12 @@ export default function Footer() {
       />
       <div
         className="absolute left-1/2 top-1/2 h-[350px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.06]"
-        style={{ background: "radial-gradient(ellipse, #11C5E8, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse, #43B2F2, transparent 70%)" }}
       />
 
       {/* Top edge glow */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#11C5E8]/50 to-transparent" />
-      <div className="absolute inset-x-0 top-0 h-[3px] w-full bg-gradient-to-r from-transparent via-[#11C5E8]/20 to-transparent blur-sm" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#43B2F2]/50 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-[3px] w-full bg-gradient-to-r from-transparent via-[#43B2F2]/20 to-transparent blur-sm" />
 
       <div className="relative mx-auto max-w-7xl px-6 pt-10 pb-10 lg:px-12">
         {/* 4-column grid */}
@@ -87,7 +87,7 @@ export default function Footer() {
           <div>
             <h4
               className="mb-5 text-[13px] font-bold uppercase tracking-[0.15em]"
-              style={{ color: "#11C5E8" }}
+              style={{ color: "#43B2F2" }}
             >
               Services
             </h4>
@@ -113,7 +113,7 @@ export default function Footer() {
           <div>
             <h4
               className="mb-5 text-[13px] font-bold uppercase tracking-[0.15em]"
-              style={{ color: "#11C5E8" }}
+              style={{ color: "#43B2F2" }}
             >
               Company
             </h4>
@@ -143,7 +143,7 @@ export default function Footer() {
           <div>
             <h4
               className="mb-5 text-[13px] font-bold uppercase tracking-[0.15em]"
-              style={{ color: "#11C5E8" }}
+              style={{ color: "#43B2F2" }}
             >
               Legal
             </h4>
@@ -168,7 +168,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.1] bg-white/[0.05] text-white/65 transition-colors duration-300 hover:border-[#11C5E8]/50 hover:bg-[#11C5E8]/15 hover:text-[#11C5E8]"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.1] bg-white/[0.05] text-white/65 transition-colors duration-300 hover:border-[#43B2F2]/50 hover:bg-[#43B2F2]/15 hover:text-[#43B2F2]"
                 >
                   {social.icon}
                 </a>

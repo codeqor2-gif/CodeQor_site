@@ -52,7 +52,7 @@ export default function Stats() {
             key={stat.sub}
             className="flex flex-col items-center justify-center gap-1 rounded-xl border border-white/70 bg-white/80 p-5 text-center shadow-sm backdrop-blur-sm"
           >
-            <p className="text-3xl font-extrabold text-primary-700">
+            <p className="text-2xl font-extrabold text-primary-700 sm:text-2xl md:text-2xl">
               <Counter to={stat.value} />
               <span className="text-xs text-primary-500">{stat.suffix}</span>
               {stat.label && <span className="ml-1 text-xs text-primary-500">{stat.label}</span>}
@@ -62,7 +62,7 @@ export default function Stats() {
         ))}
 
         <div className="flex flex-col items-center justify-center gap-1 rounded-xl border border-white/70 bg-white/80 p-4 text-center shadow-sm backdrop-blur-sm">
-          <p className="text-3xl font-extrabold text-primary-700">24/7</p>
+          <p className="text-2xl font-extrabold text-primary-700 sm:text-2xl md:text-2xl">24/7</p>
           <p className="mt-1 text-[11px] font-medium text-zinc-700">Support Available</p>
         </div>
       </Reveal>
@@ -85,7 +85,7 @@ export default function Stats() {
         <div className="mt-4 grid grid-cols-2 gap-3">
           {statItems.map((stat) => (
             <div key={stat.sub} className="rounded-xl border border-white/70 bg-white/80 p-4 text-center shadow-sm backdrop-blur-sm">
-              <p className="text-lg font-extrabold text-primary-700">
+              <p className="text-2xl font-extrabold text-primary-700">
                 <Counter to={stat.value} />
                 {stat.suffix}
               </p>

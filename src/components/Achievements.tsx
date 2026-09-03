@@ -28,7 +28,7 @@ export default function Achievements() {
           <Reveal delay={0.1}>
             <button
               onClick={scrollToContact}
-              className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(0,102,204,0.4)] transition-all duration-300 hover:brightness-110 cursor-pointer"
+              className="group inline-flex shrink-0 items-center gap-2 rounded-md bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(0,102,204,0.4)] transition-all duration-300 hover:brightness-110 cursor-pointer"
             >
               Get in Touch
             </button>
@@ -48,9 +48,9 @@ export default function Achievements() {
               <div className="mx-auto mb-3 h-10 w-10 rounded-xl bg-gradient-to-br from-primary-600/20 to-accent-600/20 p-2.5 transition-transform duration-300 group-hover:scale-110">
                 <div className="h-full w-full rounded-full border-2 border-dashed border-primary-500/70" />
               </div>
-              <p className="text-2xl font-extrabold text-zinc-900 sm:text-3xl md:text-4xl">
+              <p className="text-2xl font-extrabold text-zinc-900 sm:text-2xl md:text-2xl">
                 <Counter to={item.value} />
-                <span className="text-gradient">{item.suffix}</span>
+                <span className="text-primary-600">{item.suffix}</span>
               </p>
               <p className="mt-1.5 text-xs font-medium text-primary-600">{item.label}</p>
             </motion.div>

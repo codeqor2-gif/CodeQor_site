@@ -176,7 +176,7 @@ export default function Navbar() {
         <div className="hidden shrink-0 lg:block">
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-full bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-2.5 text-[13px] font-semibold text-white shadow-[0_4px_16px_rgba(0,102,204,0.3)] transition-all duration-300 hover:brightness-110 cursor-pointer"
+            className="inline-flex items-center rounded-md bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-2.5 text-[13px] font-semibold text-white shadow-[0_4px_16px_rgba(0,102,204,0.3)] transition-all duration-300 hover:brightness-110 cursor-pointer"
           >
             Contact Us
           </Link>
@@ -247,7 +247,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 inline-block rounded-full bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 text-center text-sm font-semibold text-white"
+                className="mt-2 inline-block rounded-md bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 text-center text-sm font-semibold text-white"
               >
                 Contact Us
               </Link>

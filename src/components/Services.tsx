@@ -22,7 +22,7 @@ export default function Services() {
             </h2>
           </div>
           <Reveal delay={0.15}>
-            <button className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(0,102,204,0.4)] transition-all duration-300 hover:brightness-110 cursor-pointer">
+            <button className="inline-flex shrink-0 items-center gap-2 rounded-md bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(0,102,204,0.4)] transition-all duration-300 hover:brightness-110 cursor-pointer">
               View All Services
             </button>
           </Reveal>

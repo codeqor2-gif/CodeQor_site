@@ -19,7 +19,7 @@ export default function PrivacyPage() {
         </Link>
 
         <h1 className="text-4xl font-bold text-zinc-900 sm:text-5xl">
-          Privacy <span className="text-gradient">Policy</span>
+          Privacy <span className="text-primary-600">Policy</span>
         </h1>
         <p className="mt-4 text-sm text-zinc-500">Last updated: August 17, 2026</p>
 

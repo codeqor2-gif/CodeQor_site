@@ -38,12 +38,12 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-10"
         >
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: "#0a1628" }}>
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl" style={{ color: "#0a1628" }}>
             Get In{" "}
             <span
               className="bg-clip-text text-transparent"
               style={{
-                backgroundImage: "linear-gradient(135deg, #0052CC, #11C5E8)",
+                backgroundImage: "linear-gradient(135deg, #0052CC, #43B2F2)",
               }}
             >
               Touch
