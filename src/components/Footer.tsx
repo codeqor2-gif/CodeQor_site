@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { FiMail } from "react-icons/fi";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -81,6 +82,19 @@ export default function Footer() {
               CodeQor Technologies is a full-service IT and digital marketing company
               delivering innovative, scalable solutions to businesses worldwide.
             </p>
+
+            <a
+              href="mailto:codeqor2@gmail.com"
+              className="mt-6 inline-flex items-center gap-2.5 rounded-lg border border-white/[0.12] bg-white/[0.05] px-4 py-3 transition-all duration-300 hover:border-[#43B2F2]/50 hover:bg-[#43B2F2]/10"
+            >
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary-600 to-accent-600 text-white">
+                <FiMail size={15} />
+              </span>
+              <span className="leading-tight">
+                <span className="block text-[10px] font-semibold uppercase tracking-widest text-white/50">Email us</span>
+                <span className="mt-0.5 block text-[13px] font-semibold text-white">codeqor2@gmail.com</span>
+              </span>
+            </a>
           </div>
 
           {/* Column 2 — Services */}

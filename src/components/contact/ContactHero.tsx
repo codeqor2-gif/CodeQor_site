@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 
 export default function ContactHero() {
   return (
@@ -27,30 +26,10 @@ export default function ContactHero() {
         <motion.span animate={{ y: [0, -14, 0], opacity: [0.4, 1, 0.4] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="absolute left-[14%] top-[25%] h-2 w-2 rounded-full bg-sky-100 shadow-[0_0_18px_5px_rgba(165,243,252,0.5)]" />
         <motion.span animate={{ y: [0, 12, 0], opacity: [0.3, 1, 0.3] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }} className="absolute right-[18%] top-[20%] h-3 w-3 rounded-full bg-white shadow-[0_0_20px_6px_rgba(255,255,255,0.4)]" />
       </div>
-      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-8 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:px-10">
+      <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
         <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl">
           <h1 className="text-4xl font-bold leading-[1.08] tracking-[-0.04em] text-white sm:text-5xl lg:text-[4rem]">Let&apos;s build something <span className="bg-gradient-to-r from-sky-200 via-white to-sky-300 bg-clip-text text-transparent">great.</span></h1>
           <p className="mt-6 max-w-2xl text-base leading-7 text-blue-100/75 sm:text-base">Tell us what you&apos;re working on. Our team will help turn your next challenge into a clear, practical path forward.</p>
-        </motion.div>
-        <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.75, delay: 0.15 }} className="relative mx-auto w-full max-w-md">
-          <div className="absolute -inset-5 rounded-[2rem] bg-sky-300/15 blur-2xl" />
-          <div className="relative rounded-[2rem] border border-white/20 bg-white/[0.08] p-5 shadow-[0_20px_55px_rgba(0,20,60,0.24)] backdrop-blur-md sm:p-6">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-200">Start a conversation</p>
-            <div className="mt-5 space-y-3">
-              <a href="mailto:business@netrootstech.com" className="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.06] p-4 transition-colors hover:border-sky-200/40 hover:bg-white/10">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-300/15 text-sky-200"><FiMail /></span>
-                <span><span className="block text-[10px] font-semibold uppercase tracking-widest text-white/45">Email us</span><span className="mt-1 block text-sm font-semibold text-white">business@netrootstech.com</span></span>
-              </a>
-              <a href="tel:+13023001742" className="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.06] p-4 transition-colors hover:border-sky-200/40 hover:bg-white/10">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-300/15 text-sky-200"><FiPhone /></span>
-                <span><span className="block text-[10px] font-semibold uppercase tracking-widest text-white/45">Call us</span><span className="mt-1 block text-sm font-semibold text-white">+1 (302) 300-1742</span></span>
-              </a>
-              <div className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.06] p-4">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-300/15 text-sky-200"><FiMapPin /></span>
-                <span><span className="block text-[10px] font-semibold uppercase tracking-widest text-white/45">Head office</span><span className="mt-1 block text-sm font-semibold text-white">Easton, Pennsylvania, USA</span></span>
-              </div>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>

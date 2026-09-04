@@ -1,7 +1,7 @@
 import type { ElementType } from "react";
 import {
   FaIndustry, FaTruck, FaHeartbeat, FaLandmark, FaShoppingBag,
-  FaGraduationCap, FaNetworkWired, FaBolt, FaCarSide,
+  FaGraduationCap, FaNetworkWired, FaBolt, FaCity,
 } from "react-icons/fa";
 
 export type Industry = {
@@ -61,9 +61,9 @@ export const industries: Industry[] = [
     image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    icon: FaCarSide,
-    title: "Automotive & Mobility",
-    description: "Connected vehicles, digital retail, financing platforms, and fleet solutions.",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop",
+    icon: FaCity,
+    title: "Government & Public Sector",
+    description: "Citizen-facing platforms, digital services modernization, and compliance systems.",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
   },
 ];

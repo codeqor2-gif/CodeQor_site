@@ -8,35 +8,54 @@ import SectionHeading from "@/components/SectionHeading";
 
 const team = [
   {
-    name: "Sarah Chen",
-    role: "CEO & Co-Founder",
-    bio: "20+ years leading digital transformation for companies.",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=600&auto=format&fit=crop",
+    name: "Tahir Shahbaz",
+    role: "CEO",
+    bio: "Chief Executive setting the company strategy and leading long-term growth.",
+    image: "/images/tahir-shahbaz.jpg",
   },
-  {
-    name: "Marcus Johnson",
+   {
+    name: "Tayba Tahir",
+    role: "Co-Founder",
+    bio: "Co-founder helping shape the company vision and drive its growth from day one.",
+    image: "/images/tayba-tahir.jpg",
+  },
+    {
+    name: "Hassan Jamal",
     role: "CTO & Co-Founder",
-    bio: "Distributed systems expert with 15+ years architecting platforms.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop",
+    bio: "Chief Technology Officer guiding architecture, innovation, and technical direction.",
+    image: "/images/hassan-jamal.jpg",
   },
   {
-    name: "Priya Patel",
-    role: "VP of Engineering",
-    bio: "Built high-performing engineering teams across 3 continents.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop",
+    name: "Umer Waseem",
+    role: "Full Stack Developer",
+    bio: "Versatile engineer building complete web solutions from frontend to backend.",
+    image: "/images/umer-waseem.jpg",
   },
   {
-    name: "David Rodriguez",
-    role: "VP of Delivery",
-    bio: "Agile leader with 500+ successful project deliveries worldwide.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop",
+    name: "Ayesha Tahir",
+    role: "Full Stack Developer",
+    bio: "Full-stack specialist delivering end-to-end features with clean, scalable code.",
+    image: "/images/ayesha-tahir.jpg",
   },
+  {
+    name: "M. Hamza Khan",
+    role: "Frontend Developer",
+    bio: "Crafts responsive, interactive interfaces focused on performance and usability.",
+    image: "/images/hamza-khan.jpg",
+  },
+  {
+    name: "Samar Rashid",
+    role: "Frontend Developer",
+    bio: "Builds modern, user-friendly frontends with attention to detail and consistency.",
+    image: "/images/samar-rashid.jpg",
+  },
+ 
 ];
 
 const socialLinks = [
-  { icon: FaWhatsapp, label: "WhatsApp", href: "#", bg: "bg-[#25D366]/20 border-[#25D366]/30 text-[#25D366]", hover: "hover:bg-[#25D366]/35 hover:border-[#25D366]/50" },
-  { icon: FaInstagram, label: "Instagram", href: "#", bg: "bg-[#E4405F]/20 border-[#E4405F]/30 text-[#E4405F]", hover: "hover:bg-[#E4405F]/35 hover:border-[#E4405F]/50" },
-  { icon: FaFacebookF, label: "Facebook", href: "#", bg: "bg-[#1877F2]/20 border-[#1877F2]/30 text-[#1877F2]", hover: "hover:bg-[#1877F2]/35 hover:border-[#1877F2]/50" },
+  { icon: FaWhatsapp, label: "WhatsApp", href: "https://wa.me/923224544934", bg: "bg-[#25D366]/20 border-[#25D366]/30 text-[#25D366]", hover: "hover:bg-[#25D366]/35 hover:border-[#25D366]/50" },
+  { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/codqortechnologiesofficial/", bg: "bg-[#E4405F]/20 border-[#E4405F]/30 text-[#E4405F]", hover: "hover:bg-[#E4405F]/35 hover:border-[#E4405F]/50" },
+  { icon: FaFacebookF, label: "Facebook", href: "https://www.facebook.com/profile.php?id=61594209324185", bg: "bg-[#1877F2]/20 border-[#1877F2]/30 text-[#1877F2]", hover: "hover:bg-[#1877F2]/35 hover:border-[#1877F2]/50" },
 ];
 
 export default function AboutTeam() {
