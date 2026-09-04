@@ -29,7 +29,7 @@ const team = [
     name: "Umer Waseem",
     role: "Full Stack Developer",
     bio: "Versatile engineer building complete web solutions from frontend to backend.",
-    image: "/images/umer-waseem.jpg",
+    image: "/images/umer-waseem.png",
   },
   {
     name: "Ayesha Tahir",

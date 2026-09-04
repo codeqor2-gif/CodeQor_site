@@ -12,8 +12,8 @@ const cards = [
   {
     icon: <FiPhone size={24} />,
     title: "Call Us",
-    content: "+1 (302) 300-1742",
-    href: "tel:+13023001742",
+    content: "+92 22 4544934",
+    href: "tel:+92224544934",
   },
   {
     icon: <FiClock size={24} />,

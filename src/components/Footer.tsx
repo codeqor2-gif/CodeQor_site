@@ -6,15 +6,15 @@ import {
   FaFacebookF,
   FaLinkedinIn,
   FaInstagram,
-  FaYoutube,
+  FaWhatsapp,
 } from "react-icons/fa";
 import Logo from "./Logo";
 
 const socials = [
-  { icon: <FaFacebookF size={13} />, label: "Facebook", href: "https://www.facebook.com/netrootstech" },
-  { icon: <FaLinkedinIn size={13} />, label: "LinkedIn", href: "https://www.linkedin.com/company/netroots-technologies" },
-  { icon: <FaInstagram size={13} />, label: "Instagram", href: "https://www.instagram.com/netroots_technologies" },
-  { icon: <FaYoutube size={13} />, label: "YouTube", href: "https://www.youtube.com/@netrootstechnologies7406" },
+  { icon: <FaFacebookF size={13} />, label: "Facebook", href: "https://www.facebook.com/profile.php?id=61594209324185" },
+  { icon: <FaLinkedinIn size={13} />, label: "LinkedIn", href: "https://www.linkedin.com/in/tayyba-tahir-836972247/" },
+  { icon: <FaInstagram size={13} />, label: "Instagram", href: "https://www.instagram.com/codqortechnologiesofficial/" },
+  { icon: <FaWhatsapp size={13} />, label: "WhatsApp", href: "https://wa.me/923224544934" },
 ];
 
 const serviceLinks = [
@@ -85,14 +85,14 @@ export default function Footer() {
 
             <a
               href="mailto:codeqor2@gmail.com"
-              className="mt-6 inline-flex items-center gap-2.5 rounded-lg border border-white/[0.12] bg-white/[0.05] px-4 py-3 transition-all duration-300 hover:border-[#43B2F2]/50 hover:bg-[#43B2F2]/10"
+              className="mt-6 inline-flex items-center gap-2.5 transition-opacity duration-300 hover:opacity-90"
             >
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary-600 to-accent-600 text-white">
                 <FiMail size={15} />
               </span>
               <span className="leading-tight">
                 <span className="block text-[10px] font-semibold uppercase tracking-widest text-white/50">Email us</span>
-                <span className="mt-0.5 block text-[13px] font-semibold text-white">codeqor2@gmail.com</span>
+                <span className="mt-0.5 block text-[11px] font-semibold text-white">codeqor2@gmail.com</span>
               </span>
             </a>
           </div>
