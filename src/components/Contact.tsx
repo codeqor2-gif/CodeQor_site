@@ -7,7 +7,7 @@ const cards = [
   {
     icon: <FiMapPin size={24} />,
     title: "Head Office",
-    content: "Easton, Pennsylvania, USA",
+    content: "Mumtaz Market, GT Rd, Civil Lines, Gujranwala",
   },
   {
     icon: <FiPhone size={24} />,
@@ -62,14 +62,20 @@ export default function Contact() {
             className="overflow-hidden rounded-3xl border border-primary-200/80 bg-white shadow-[0_8px_40px_rgba(0,0,0,0.06)]"
           >
             <iframe
-              title="Our location on Google Maps"
-              src="https://www.google.com/maps?q=Easton,+Pennsylvania,+USA&output=embed"
-              className="h-[280px] w-full sm:h-[340px] lg:h-full lg:min-h-[380px]"
+              title="Mumtaz Market, GT Rd, Civil Lines, Gujranwala"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=74.16513%2C32.17117%2C74.20513%2C32.19117&layer=mapnik&marker=32.18117%2C74.18513"
+              className="block h-[280px] w-full sm:h-[340px] lg:h-[380px]"
               style={{ border: 0 }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
+              loading="eager"
             />
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Mumtaz+Market%2C+GT+Rd%2C+Civil+Lines%2C+Gujranwala"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 border-t border-zinc-100 bg-slate-50 px-4 py-3 text-sm font-medium text-primary-700 transition-colors hover:bg-blue-50 hover:text-primary-600"
+            >
+              <FiMapPin size={15} /> View & Get Directions in Google Maps
+            </a>
           </motion.div>
 
           {/* Right — 3 info cards stacked */}

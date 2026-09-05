@@ -9,7 +9,7 @@ import SectionHeading from "@/components/SectionHeading";
 const team = [
   {
     name: "Tahir Shahbaz",
-    role: "CEO",
+    role: "CEO and Founder",
     bio: "Chief Executive setting the company strategy and leading long-term growth.",
     image: "/images/tahir-shahbaz.jpg",
   },
@@ -29,7 +29,8 @@ const team = [
     name: "Umer Waseem",
     role: "Full Stack Developer",
     bio: "Versatile engineer building complete web solutions from frontend to backend.",
-    image: "/images/umer-waseem.png",
+    image: "/images/umer-waseem.jpg",
+    filter: "brightness(1.18) contrast(1.12) saturate(1.15)",
   },
   {
     name: "Ayesha Tahir",
@@ -78,6 +79,7 @@ export default function AboutTeam() {
                     alt={member.name}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={member.filter ? { filter: member.filter } : undefined}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                   {/* Dark overlay (always on mobile, on hover at desktop) */}
