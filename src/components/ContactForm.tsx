@@ -3,8 +3,12 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiSend } from "react-icons/fi";
+import { useState } from "react";
+import { getCountryCallingCode } from "libphonenumber-js";
+import CountryPhoneInput from "./contact/CountryPhoneInput";
 
 export default function ContactForm() {
+  const [phone, setPhone] = useState({ countryCode: "PK", phone: "" });
   return (
     <section className="relative py-6" style={{ background: "#F8FAFC" }}>
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -48,12 +52,31 @@ export default function ContactForm() {
             transition={{ duration: 0.6 }}
             className="relative order-1 overflow-hidden rounded-3xl border border-primary-200/80 bg-white p-6 shadow-[0_8px_40px_rgba(0,82,204,0.08)] transition-all duration-400 hover:border-primary-400 hover:shadow-[0_8px_40px_rgba(0,102,204,0.25)] lg:order-2"
           >
-            <form className="relative flex flex-col gap-4">
+            <form
+              className="relative flex flex-col gap-4"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const formData = new FormData(e.currentTarget);
+                const data = {
+                  name: formData.get("name"),
+                  email: formData.get("email"),
+                  phone: {
+                    countryCode: phone.countryCode,
+                    dialCode: `+${getCountryCallingCode(phone.countryCode as never)}`,
+                    number: phone.phone,
+                  },
+                  subject: formData.get("subject"),
+                  message: formData.get("message"),
+                };
+                console.log("Contact form submission:", data);
+              }}
+            >
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[13px] font-semibold text-zinc-700">Full Name</label>
                   <input
                     type="text"
+                    name="name"
                     placeholder="John Doe"
                     className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-2.5 text-sm text-zinc-900 outline-none transition-colors duration-200 placeholder:text-zinc-400 focus:border-primary-400 focus:bg-white focus:ring-2 focus:ring-primary-100"
                   />
@@ -62,6 +85,7 @@ export default function ContactForm() {
                   <label className="text-[13px] font-semibold text-zinc-700">Email</label>
                   <input
                     type="email"
+                    name="email"
                     placeholder="john@example.com"
                     className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-2.5 text-sm text-zinc-900 outline-none transition-colors duration-200 placeholder:text-zinc-400 focus:border-primary-400 focus:bg-white focus:ring-2 focus:ring-primary-100"
                   />
@@ -70,17 +94,14 @@ export default function ContactForm() {
 
               <div className="flex flex-col gap-1.5">
                 <label className="text-[13px] font-semibold text-zinc-700">Phone</label>
-                <input
-                  type="tel"
-                  placeholder="+1 (555) 000-0000"
-                  className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-2.5 text-sm text-zinc-900 outline-none transition-colors duration-200 placeholder:text-zinc-400 focus:border-primary-400 focus:bg-white focus:ring-2 focus:ring-primary-100"
-                />
+                <CountryPhoneInput value={phone} onChange={setPhone} />
               </div>
 
               <div className="flex flex-col gap-1.5">
                 <label className="text-[13px] font-semibold text-zinc-700">Subject</label>
                 <input
                   type="text"
+                  name="subject"
                   placeholder="How can we help?"
                   className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-2.5 text-sm text-zinc-900 outline-none transition-colors duration-200 placeholder:text-zinc-400 focus:border-primary-400 focus:bg-white focus:ring-2 focus:ring-primary-100"
                 />
@@ -90,14 +111,15 @@ export default function ContactForm() {
                 <label className="text-[13px] font-semibold text-zinc-700">Message</label>
                 <textarea
                   rows={3}
+                  name="message"
                   placeholder="Tell us about your project..."
                   className="resize-none rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-2.5 text-sm text-zinc-900 outline-none transition-colors duration-200 placeholder:text-zinc-400 focus:border-primary-400 focus:bg-white focus:ring-2 focus:ring-primary-100"
                 />
               </div>
 
               <button
-                type="button"
-                className="mt-1 inline-flex items-center justify-center gap-2 rounded-md bg-gradient-to-r from-primary-600 to-accent-600 px-7 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(0,102,204,0.4)] transition-all duration-300 hover:brightness-110 cursor-pointer"
+                type="submit"
+                className="mt-1 inline-flex cursor-pointer items-center justify-center gap-2 rounded-md bg-gradient-to-r from-primary-600 to-accent-600 px-7 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(0,102,204,0.4)] transition-all duration-300 hover:brightness-110"
               >
                 Send Message
                 <FiSend size={15} />

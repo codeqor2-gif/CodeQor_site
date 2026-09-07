@@ -11,13 +11,13 @@ const team = [
     name: "Tahir Shahbaz",
     role: "CEO and Founder",
     bio: "Chief Executive setting the company strategy and leading long-term growth.",
-    image: "/images/tahir-shahbaz.jpg",
+    image: "/images/thair5.jpeg",
   },
    {
-    name: "Tayba Tahir",
+    name: "Tyba Tahir",
     role: "Co-Founder",
     bio: "Co-founder helping shape the company vision and drive its growth from day one.",
-    image: "/images/tayba-tahir.jpg",
+    image: "/images/Tyba5.jpeg",
   },
     {
     name: "Hassan Jamal",
@@ -29,8 +29,8 @@ const team = [
     name: "Umer Waseem",
     role: "Full Stack Developer",
     bio: "Versatile engineer building complete web solutions from frontend to backend.",
-    image: "/images/umer-waseem.jpg",
-    filter: "brightness(1.18) contrast(1.12) saturate(1.15)",
+    image: "/images/Umer5.jpeg",
+    filter: "brightness(0.92) contrast(0.92) saturate(1.05)",
   },
   {
     name: "Ayesha Tahir",

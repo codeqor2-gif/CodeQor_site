@@ -27,10 +27,6 @@ const navItems = [
   {
     label: "Products",
     href: "/#solutions",
-    children: [
-      { label: "CapoBrain", href: "/#solutions" },
-      { label: "CapoBiz", href: "/#solutions" },
-    ],
   },
   { label: "Industries", href: "/industries" },
 ];
