@@ -31,15 +31,24 @@ export default function Loader() {
       aria-busy="true"
     >
       <motion.img
-        src="/titlelogo.jpeg"
+        src="/tab.png"
         alt="CodeQor Technologies"
-        width={210}
-        height={105}
-        className="h-20 w-40 rounded-lg object-contain shadow-[0_12px_40px_rgba(0,20,70,0.2)]"
-        initial={{ scale: 0.7, opacity: 0 }}
+        width={160}
+        height={80}
+        className="h-24 w-24 rounded-full object-contain shadow-[0_16px_48px_rgba(0,20,70,0.3)]"
+        initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       />
+
+      <motion.p
+        className="mt-5 text-2xl font-bold tracking-wide text-white"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+      >
+        CodeQor Technologies
+      </motion.p>
 
       <div className="mt-6 flex space-x-3">
         {[0, 1, 2].map((i) => (
