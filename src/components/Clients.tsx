@@ -33,7 +33,7 @@ export default function Clients() {
         <div className="flex w-max items-center">
           <div
             className="flex w-max items-center"
-            style={{ animation: "marquee 55s linear infinite" }}
+            style={{ animation: "marquee 200s linear infinite" }}
           >
             {row.map((name, i) => (
               <LogoCard key={`row1-${i}`} name={name} />
@@ -44,7 +44,7 @@ export default function Clients() {
         <div className="flex w-max items-center">
           <div
             className="flex w-max items-center"
-            style={{ animation: "marquee-reverse 65s linear infinite" }}
+            style={{ animation: "marquee-reverse 210s linear infinite" }}
           >
             {row.map((name, i) => (
               <LogoCard key={`row2-${i}`} name={name} />
