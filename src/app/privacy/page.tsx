@@ -113,7 +113,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-bold text-zinc-900">10. Contact Us</h2>
             <p className="mt-3 text-sm leading-relaxed text-zinc-600">
               If you have any questions about this Privacy Policy, please contact us at{" "}
-              <a href="mailto:codeqor2@gmail.com" className="font-semibold text-primary-600 hover:underline">codeqor2@gmail.com</a>{" "}
+              <a href="mailto:info@codqortechnologies.com" className="font-semibold text-primary-600 hover:underline">info@codqortechnologies.com</a>{" "}
               or call <a href="tel:03224544934" className="font-semibold text-primary-600 hover:underline">03224544934</a>.
             </p>
           </div>

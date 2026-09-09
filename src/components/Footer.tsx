@@ -84,7 +84,7 @@ export default function Footer() {
             </p>
 
             <a
-              href="mailto:codeqor2@gmail.com"
+              href="mailto:info@codqortechnologies.com"
               className="mt-6 inline-flex items-center gap-2.5 transition-opacity duration-300 hover:opacity-90"
             >
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary-600 to-accent-600 text-white">
@@ -92,7 +92,7 @@ export default function Footer() {
               </span>
               <span className="leading-tight">
                 <span className="block text-[10px] font-semibold uppercase tracking-widest text-white/50">Email us</span>
-                <span className="mt-0.5 block text-[11px] font-semibold text-white">codeqor2@gmail.com</span>
+                <span className="mt-0.5 block text-[11px] font-semibold text-white">info@codqortechnologies.com</span>
               </span>
             </a>
           </div>

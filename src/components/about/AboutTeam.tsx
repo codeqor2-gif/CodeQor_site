@@ -36,7 +36,13 @@ const team = [
     name: "Ayesha Tahir",
     role: "Full Stack Developer",
     bio: "Full-stack specialist delivering end-to-end features with clean, scalable code.",
-    image: "/images/ayesha-tahir.jpg",
+    image: "/images/ayesha-tahir.jpeg",
+  },
+  {
+    name: "Esha Tahir",
+    role: "HR Manager",
+    bio: "Managing human resources with a focus on employee engagement and organizational growth.",
+    image: "/images/esha-tahir.jpg",
   },
   {
     name: "M. Hamza Khan",
