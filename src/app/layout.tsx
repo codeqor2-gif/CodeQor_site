@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description:
     "We blend creative marketing strategies with novel solutions that help businesses grow, connect, and thrive in their niche.",
   icons: {
-    icon: "/CodeQorLogo-transparent-600.png",
+    icon: "/titlelogo.jpeg",
   },
 };
 
