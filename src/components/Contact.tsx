@@ -7,7 +7,7 @@ const cards = [
   {
     icon: <FiMapPin size={24} />,
     title: "Head Office",
-    content: "Mumtaz Market, GT Rd, Civil Lines, Gujranwala",
+    content: "CodeQor Technologies, Mumtaz Market, GT Rd, Civil Lines, Gujranwala",
   },
   {
     icon: <FiPhone size={24} />,
@@ -69,7 +69,7 @@ export default function Contact() {
               loading="eager"
             />
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Mumtaz+Market%2C+GT+Rd%2C+Civil+Lines%2C+Gujranwala"
+              href="32.17965480072819, 74.18464942906243"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 border-t border-zinc-100 bg-slate-50 px-4 py-3 text-sm font-medium text-primary-700 transition-colors hover:bg-blue-50 hover:text-primary-600"

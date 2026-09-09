@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "CodeQor Technologies | Grow Your Business With Us",
   description:
     "We blend creative marketing strategies with novel solutions that help businesses grow, connect, and thrive in their niche.",
+  icons: {
+    icon: "/CodeQorLogo-transparent-600.png",
+  },
 };
 
 export default function RootLayout({
