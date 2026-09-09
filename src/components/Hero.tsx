@@ -18,7 +18,7 @@ export default function Hero() {
         preload="auto"
         className="absolute inset-0 hidden h-full w-full object-cover md:block"
         style={{ filter: "brightness(1.1) contrast(1.05) saturate(1.15)" }}
-        src="Home2.mp4"
+        src="Heroupdate.mp4"
       />
 
       {/* Mobile: portrait video (hidden on desktop) */}
@@ -30,7 +30,7 @@ export default function Hero() {
         preload="auto"
         className="absolute inset-0 block h-full w-full object-cover md:hidden"
         style={{ filter: "brightness(1.1) contrast(1.05) saturate(1.15)" }}
-        src="Home2.mp4"
+        src="Heroupdate.mp4"
       />
 
       {/* Darkening gradient so text stays readable over the video */}
@@ -48,14 +48,14 @@ export default function Hero() {
           transition={{ duration: 0.75 }}
           className="max-w-3xl"
         >
-          <div>
+          {/* <div>
             <p className="text-4xl font-bold leading-[1.08] tracking-[-0.04em] text-white sm:text-5xl lg:text-[4rem]">
               Transform Your{" "}
               <span className="bg-gradient-to-r from-sky-200 via-white to-sky-300 bg-clip-text text-transparent">
                 Ideas into Digital Solutions
               </span>
             </p>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>
