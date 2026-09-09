@@ -14,14 +14,14 @@ const team = [
     image: "/images/thair5.jpeg",
   },
    {
-    name: "Tyba Tahir",
+    name: "Tayyba Tahir",
     role: "Co-Founder",
     bio: "Co-founder helping shape the company vision and drive its growth from day one.",
     image: "/images/Tyba5.jpeg",
   },
     {
     name: "Hassan Jamal",
-    role: "CTO & Co-Founder",
+    role: "CTO & Technology Executive",
     bio: "Chief Technology Officer guiding architecture, innovation, and technical direction.",
     image: "/images/hassan-jamal.jpg",
   },
