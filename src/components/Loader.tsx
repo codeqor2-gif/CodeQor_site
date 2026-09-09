@@ -31,7 +31,7 @@ export default function Loader() {
       aria-busy="true"
     >
       <motion.img
-        src="/CodeQorLogo-transparent-600.png"
+        src="/titlelogo.jpeg"
         alt="CodeQor Technologies"
         width={210}
         height={105}
