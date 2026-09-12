@@ -120,7 +120,7 @@ export default function TechTalentTeamExpansion() {
             </Reveal>
             <Reveal x={40}>
               <div className="max-w-xl">
-                <h3 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Why choose CodeQor for team expansion</h3>
+                <h3 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Why choose CodQor for team expansion</h3>
                 <ul className="mt-7 space-y-4">
                   {benefits.map((benefit) => (
                     <li key={benefit} className="flex items-center gap-3 text-base font-medium text-slate-700">

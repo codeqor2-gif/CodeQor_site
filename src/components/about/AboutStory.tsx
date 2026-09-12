@@ -14,7 +14,7 @@ export default function AboutStory() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-zinc-200 shadow-[0_20px_60px_rgba(0,102,204,0.12)]">
                 <Image
                   src="/images/Techonology.jpg"
-                  alt="CodeQor team collaboration"
+                  alt="CodQor team collaboration"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -34,7 +34,7 @@ export default function AboutStory() {
                 <span className="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">Digital Excellence</span>
               </h2>
               <p className="mt-4 text-zinc-600 leading-relaxed">
-                CodeQor Technologies is a full-service software development company
+                CodQor Technologies is a full-service software development company
                 specializing in custom web applications, mobile apps, cloud solutions,
                 and AI-powered products. We partner with startups, SMEs, and enterprises
                 to build scalable, innovative technology that drives real business outcomes.

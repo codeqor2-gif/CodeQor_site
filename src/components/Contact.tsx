@@ -7,7 +7,7 @@ const cards = [
   {
     icon: <FiMapPin size={24} />,
     title: "Head Office",
-    content: "CodeQor Technologies, Mumtaz Market, GT Rd, Civil Lines, Gujranwala",
+    content: "CodQor Technologies, Mumtaz Market, GT Rd, Civil Lines, Gujranwala",
   },
   {
     icon: <FiPhone size={24} />,
@@ -61,13 +61,21 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="overflow-hidden rounded-3xl border border-primary-200/80 bg-white shadow-[0_8px_40px_rgba(0,0,0,0.06)]"
           >
-            <iframe
-              title="Mumtaz Market, GT Rd, Civil Lines, Gujranwala"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=74.16513%2C32.17117%2C74.20513%2C32.19117&layer=mapnik&marker=32.18117%2C74.18513"
-              className="block h-[280px] w-full sm:h-[340px] lg:h-[380px]"
-              style={{ border: 0 }}
-              loading="eager"
-            />
+            <div className="relative h-[280px] w-full overflow-hidden sm:h-[340px] lg:h-[380px]">
+              <iframe
+                title="Mumtaz Market, GT Rd, Civil Lines, Gujranwala"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=74.16513%2C32.17117%2C74.20513%2C32.19117&layer=mapnik&marker=32.18117%2C74.18513"
+                loading="eager"
+                className="absolute"
+                style={{
+                  border: 0,
+                  left: "-42px",
+                  top: "-82px",
+                  width: "calc(100% + 42px)",
+                  height: "calc(100% + 82px)",
+                }}
+              />
+            </div>
             <a
               href="32.17965480072819, 74.18464942906243"
               target="_blank"

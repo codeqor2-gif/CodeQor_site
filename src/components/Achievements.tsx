@@ -17,7 +17,7 @@ export default function Achievements() {
           <div className="max-w-2xl">
           
             <h2 className="text-2xl font-bold leading-snug text-zinc-900 sm:text-3xl">
-              CodeQor Technologies <span className="text-gradient">Achievements</span>
+              CodQor Technologies <span className="text-gradient">Achievements</span>
             </h2>
           
           </div>

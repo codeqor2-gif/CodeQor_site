@@ -91,7 +91,7 @@ export default function Navbar() {
         <Link
           href="/#home"
           className="shrink-0 transition-transform duration-300 ease-out hover:scale-[1.05] active:scale-100"
-          aria-label="CodeQor Technologies home"
+          aria-label="CodQor Technologies home"
         >
           <Logo />
         </Link>

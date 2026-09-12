@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
   return {
-    title: service ? `${service.title} | CodeQor Technologies` : "Services | CodeQor Technologies",
+    title: service ? `${service.title} | CodQor Technologies` : "Services | CodQor Technologies",
   };
 }
 

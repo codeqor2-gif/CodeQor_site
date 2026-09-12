@@ -35,7 +35,7 @@ export default function AboutHero() {
           </div>
 
           <p className="mt-6 max-w-2xl text-base leading-7 text-blue-100/75 sm:text-base">
-            For over a decade, CodeQor Technologies has helped businesses grow, connect, and thrive by building technology that solves real problems and delivers lasting impact.
+            For over a decade, CodQor Technologies has helped businesses grow, connect, and thrive by building technology that solves real problems and delivers lasting impact.
           </p>
         </motion.div>
       </div>

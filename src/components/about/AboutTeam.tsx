@@ -62,6 +62,12 @@ const team = [
     bio: "Drives brand growth with data-driven digital marketing strategies and impactful campaigns.",
     image: "/images/faisal-hassan.jpg",
   },
+  {
+    name: "Muhammad Adan Raza",
+    role: "Digital Marketing Specialist",
+    bio: "Executes targeted digital campaigns that expand brand reach.",
+    image: "/images/adan-raza.png",
+  },
  
 ];
 

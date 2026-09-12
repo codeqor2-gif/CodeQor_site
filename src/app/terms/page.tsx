@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FiArrowLeft } from "react-icons/fi";
 
 export const metadata = {
-  title: "Terms & Conditions | CodeQor Technologies",
+  title: "Terms & Conditions | CodQor Technologies",
 };
 
 export default function TermsPage() {
@@ -27,7 +27,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-xl font-bold text-zinc-900">1. Acceptance of Terms</h2>
             <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-              By accessing and using the services provided by CodeQor Technologies ("Company",
+              By accessing and using the services provided by CodQor Technologies ("Company",
               "we", "us"), you accept and agree to be bound by the terms and provisions of this
               agreement. If you do not agree to these terms, please do not use our services.
             </p>
@@ -36,7 +36,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-xl font-bold text-zinc-900">2. Services</h2>
             <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-              CodeQor Technologies provides IT services, software development, digital marketing,
+              CodQor Technologies provides IT services, software development, digital marketing,
               ERP solutions, and related technology consulting services. We reserve the right to
               modify, suspend, or discontinue any service at any time without prior notice.
             </p>
@@ -46,7 +46,7 @@ export default function TermsPage() {
             <h2 className="text-xl font-bold text-zinc-900">3. Intellectual Property</h2>
             <p className="mt-3 text-sm leading-relaxed text-zinc-600">
               All content, trademarks, logos, and intellectual property displayed on this website
-              are the property of CodeQor Technologies or its licensors. You may not reproduce,
+              are the property of CodQor Technologies or its licensors. You may not reproduce,
               distribute, or create derivative works without our express written permission.
             </p>
           </div>
@@ -54,7 +54,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-xl font-bold text-zinc-900">4. Limitation of Liability</h2>
             <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-              In no event shall CodeQor Technologies be liable for any indirect, incidental,
+              In no event shall CodQor Technologies be liable for any indirect, incidental,
               special, consequential, or punitive damages resulting from your use of or inability
               to use our services. Our total liability shall not exceed the amount paid by you for
               the specific service giving rise to the claim.

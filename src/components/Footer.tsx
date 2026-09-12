@@ -79,7 +79,7 @@ export default function Footer() {
               <Logo light />
             </div>
             <p className="max-w-[300px] text-[13px] leading-[1.9] text-white/80">
-              CodeQor Technologies is a full-service IT and digital marketing company
+              CodQor Technologies is a full-service IT and digital marketing company
               delivering innovative, scalable solutions to businesses worldwide.
             </p>
 

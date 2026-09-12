@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FiArrowLeft } from "react-icons/fi";
 
 export const metadata = {
-  title: "Privacy Policy | CodeQor Technologies",
+  title: "Privacy Policy | CodQor Technologies",
 };
 
 export default function PrivacyPage() {

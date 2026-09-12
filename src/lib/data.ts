@@ -155,21 +155,21 @@ export const testimonials = [
     rating: 4.5,
     title: "Best Decision Ever",
     quote:
-      "CodeQor Technologies provided us with the best ERP solution to manage our business. We highly recommend their ERP software. It is one of the most customized ERP systems available. The platform is intuitive and efficient. It has truly transformed the way we operate.",
+      "CodQor Technologies provided us with the best ERP solution to manage our business. We highly recommend their ERP software. It is one of the most customized ERP systems available. The platform is intuitive and efficient. It has truly transformed the way we operate.",
     author: "Hanif Jewelers",
   },
   {
     rating: 4.9,
     title: "Amazing Business Support!",
     quote:
-      "CodeQor Technologies has been instrumental in driving the growth of our business. Their ERP solutions and digital services have streamlined our operations, improved efficiency, and allowed us to focus on expanding our reach.",
+      "CodQor Technologies has been instrumental in driving the growth of our business. Their ERP solutions and digital services have streamlined our operations, improved efficiency, and allowed us to focus on expanding our reach.",
     author: "American Greatest Wings",
   },
   {
     rating: 4.5,
     title: "Extremely Recommended",
     quote:
-      "We wanted to expand our business and wanted to outshine our standing in the market, thus we chose CodeQor Technologies. We are glad that we landed on their page and have attained such Digital Marketing Services, which include Social Media Marketing.",
+      "We wanted to expand our business and wanted to outshine our standing in the market, thus we chose CodQor Technologies. We are glad that we landed on their page and have attained such Digital Marketing Services, which include Social Media Marketing.",
     author: "California Pizza",
   },
   {

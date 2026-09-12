@@ -6,8 +6,8 @@ export default function Logo({ compact = false, light = false }: { compact?: boo
       }`}
     >
       <img
-        src="/CodeQorLogo-transparent-600.png"
-        alt="CodeQor Technologies"
+        src="/CodQorLogo-transparent-600.png"
+        alt="CodQor Technologies"
         width={compact ? 144 : 144}
         height={compact ? 72 : 72}
         className={`absolute max-w-none ${compact ? "-left-[61px] -top-[22px]" : "left-0 -top-4"}`}

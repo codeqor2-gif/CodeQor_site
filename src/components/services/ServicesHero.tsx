@@ -34,7 +34,7 @@ export default function ServicesHero() {
             </p>
           </div>
           <p className="mt-6 max-w-2xl text-base leading-7 text-blue-100/75 sm:text-base">
-            At CodeQor Technologies, we offer a comprehensive range of services to help businesses thrive in the digital age. 
+            At CodQor Technologies, we offer a comprehensive range of services to help businesses thrive in the digital age. 
           </p>
         </motion.div>
       </div>
