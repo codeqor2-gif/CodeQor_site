@@ -32,43 +32,44 @@ const team = [
     image: "/images/Umer5.jpeg",
     filter: "brightness(0.92) contrast(0.92) saturate(1.05)",
   },
-  {
+    {
+    name: "Muhammad Adan Raza",
+    role: "Digital Marketing Manager",
+    bio: "Executes targeted digital campaigns that expand brand reach.",
+    image: "/images/adan-raza.png",
+  },
+    {
     name: "Ayesha Tahir",
     role: "Full Stack Developer",
     bio: "Full-stack specialist delivering end-to-end features with clean, scalable code.",
     image: "/images/ayesha-tahir.jpeg",
   },
-  {
-    name: "Esha Tahir",
-    role: "HR Manager",
-    bio: "Managing human resources with a focus on employee engagement and organizational growth.",
-    image: "/images/esha-tahir.jpg",
-  },
-  {
+      {
     name: "M. Hamza Khan",
     role: "Frontend Developer",
     bio: "Crafts responsive, interactive interfaces focused on performance and usability.",
     image: "/images/hamza-khan.jpg",
   },
-  {
+    {
     name: "Samar Rashid",
     role: "Frontend Developer",
     bio: "Builds modern, user-friendly frontends with attention to detail and consistency.",
     image: "/images/samar-rashid.jpg",
   },
-  {
+
+  
+ {
     name: "Muhammad Faisal Hassan",
     role: "Digital Marketing Specialist",
     bio: "Drives brand growth with data-driven digital marketing strategies and impactful campaigns.",
     image: "/images/faisal-hassan.jpg",
   },
-  {
-    name: "Muhammad Adan Raza",
-    role: "Digital Marketing Specialist",
-    bio: "Executes targeted digital campaigns that expand brand reach.",
-    image: "/images/adan-raza.png",
+      {
+    name: "Esha Tahir",
+    role: "HR Manager",
+    bio: "Managing human resources with a focus on employee engagement and organizational growth.",
+    image: "/images/esha-tahir.jpg",
   },
- 
 ];
 
 const socialLinks = [
