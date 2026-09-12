@@ -56,6 +56,12 @@ const team = [
     bio: "Builds modern, user-friendly frontends with attention to detail and consistency.",
     image: "/images/samar-rashid.jpg",
   },
+  {
+    name: "Muhammad Faisal Hassan",
+    role: "Digital Marketing Specialist",
+    bio: "Drives brand growth with data-driven digital marketing strategies and impactful campaigns.",
+    image: "/images/faisal-hassan.jpg",
+  },
  
 ];
 
