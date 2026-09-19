@@ -25,7 +25,7 @@ export default function ServiceDetail({ slug }: Props) {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
             <Link href="/services" className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-white/80 transition-colors hover:text-white"><FaArrowLeft /> Back to all services</Link>
-            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl text-2xl text-white shadow-lg" style={{ backgroundImage: `linear-gradient(135deg, ${service.hex}, ${service.hex}99)` }}>
+            <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl text-lg text-white shadow-[0_4px_14px_rgba(0,102,204,0.2)]" style={{ backgroundImage: `linear-gradient(135deg, ${service.hex}, ${service.hex}99)` }}>
               <service.icon />
             </div>
             <h1 className="text-4xl font-bold leading-[1.08] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">{service.title}</h1>

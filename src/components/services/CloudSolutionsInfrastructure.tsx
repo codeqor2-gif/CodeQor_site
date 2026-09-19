@@ -94,7 +94,7 @@ export default function CloudSolutionsInfrastructure() {
               <Reveal key={service.title} y={30} delay={(i % 3) * 0.06}>
                 <div className="group relative h-full rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_8px_26px_rgba(0,75,140,0.06)] transition-all duration-300 hover:border-primary-300 hover:shadow-[0_16px_44px_rgba(0,102,204,0.14)]">
                   <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: "radial-gradient(circle, rgba(0,102,204,0.14) 0%, transparent 70%)" }} />
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-600 to-primary-800 text-xl text-white shadow-[0_8px_22px_rgba(0,102,204,0.24)]"><service.icon /></div>
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-primary-800 text-base text-white shadow-[0_4px_14px_rgba(0,102,204,0.2)]"><service.icon /></div>
                   <h3 className="text-base font-bold text-slate-900">{service.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">{service.desc}</p>
                 </div>
@@ -149,7 +149,7 @@ export default function CloudSolutionsInfrastructure() {
             {platformServices.map((service, i) => (
               <Reveal key={service.title} y={30} delay={(i % 4) * 0.06}>
                 <div className="group relative h-full rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_8px_26px_rgba(0,75,140,0.06)] transition-all duration-300 hover:border-primary-300 hover:shadow-[0_16px_44px_rgba(0,102,204,0.14)]">
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-600 to-primary-800 text-xl text-white shadow-[0_8px_22px_rgba(0,102,204,0.24)]"><service.icon /></div>
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-primary-800 text-base text-white shadow-[0_4px_14px_rgba(0,102,204,0.2)]"><service.icon /></div>
                   <h3 className="text-base font-bold text-slate-900">{service.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">{service.desc}</p>
                 </div>
