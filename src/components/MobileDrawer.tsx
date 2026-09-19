@@ -127,36 +127,36 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         <div className="fixed inset-0 z-[999] lg:hidden" aria-labelledby="mobile-nav-title">
           {/* Dark semi-transparent backdrop overlay */}
           <motion.div
-            key="mobile-overlay"
+            key="mobile-backdrop"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"
+            className="fixed inset-0 bg-black/50 backdrop-blur-[3px] z-[998]"
             aria-hidden="true"
           />
 
-          {/* White sliding drawer panel from the right */}
+          {/* Top dropdown navigation panel */}
           <motion.aside
-            key="mobile-drawer-panel"
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            key="mobile-top-dropdown-panel"
+            initial={{ y: "-100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "-100%", opacity: 0 }}
+            transition={{ duration: 0.38, ease: [0.4, 0, 0.2, 1] }}
             onClick={(e) => e.stopPropagation()}
-            className="absolute inset-y-0 right-0 flex h-full w-[82vw] max-w-[380px] flex-col bg-white shadow-[0_0_50px_rgba(0,0,0,0.25)] overflow-y-auto overscroll-contain"
+            className="fixed inset-x-0 top-0 z-[1000] flex max-h-[88dvh] w-full flex-col bg-white shadow-[0_20px_50px_rgba(0,0,0,0.25)] rounded-b-2xl sm:rounded-b-3xl overflow-hidden"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
           >
-            {/* Header: Logo and large top-right close button */}
-            <div className="flex items-center justify-between border-b border-zinc-100 px-6 py-5 sm:px-8">
+            {/* Header: Logo and top-right close button */}
+            <div className="flex items-center justify-between border-b border-zinc-100 px-6 py-3.5 sm:px-8 bg-white shrink-0">
               <Link
                 href="/#home"
                 onClick={() => handleNavClick("/#home")}
                 aria-label="CodQor Technologies Home"
-                className="shrink-0"
+                className="shrink-0 transition-transform active:scale-95"
               >
                 <Logo />
               </Link>
@@ -164,14 +164,14 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                 type="button"
                 onClick={onClose}
                 aria-label="Close navigation menu"
-                className="flex h-11 w-11 items-center justify-center rounded-xl text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900 active:bg-zinc-200 cursor-pointer"
+                className="flex h-10 w-10 items-center justify-center rounded-lg border border-zinc-200 text-zinc-600 transition-colors hover:bg-zinc-50 hover:text-zinc-900 active:bg-zinc-100 cursor-pointer"
               >
-                <FiX size={26} className="text-zinc-700" />
+                <FiX size={22} className="text-zinc-700" />
               </button>
             </div>
 
             {/* Navigation items matching the official navbar */}
-            <nav className="flex-1 px-6 py-3 sm:px-8" id="mobile-nav-title">
+            <nav className="flex-1 overflow-y-auto overscroll-contain px-6 py-2 sm:px-8" id="mobile-nav-title">
               <ul className="divide-y divide-zinc-100">
                 {navItems.map((item) => {
                   const active = isLinkActive(item.href);
@@ -270,7 +270,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             </nav>
 
             {/* Bottom Contact Us Button — Matches the desktop CTA button */}
-            <div className="border-t border-zinc-100 px-6 py-6 sm:px-8 bg-zinc-50/50">
+            <div className="border-t border-zinc-100 px-6 py-4 sm:px-8 bg-zinc-50/70 shrink-0">
               <Link
                 href="/contact"
                 onClick={() => handleNavClick("/contact")}

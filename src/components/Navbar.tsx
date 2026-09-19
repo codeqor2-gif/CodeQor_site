@@ -186,12 +186,12 @@ export default function Navbar() {
           className="cursor-pointer rounded-lg border border-zinc-200 p-2 text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50 lg:hidden transition-colors"
           onClick={(e) => {
             e.stopPropagation();
-            setOpen(true);
+            setOpen((prev) => !prev);
           }}
-          aria-label="Open mobile menu"
+          aria-label={open ? "Close mobile menu" : "Open mobile menu"}
           aria-expanded={open}
         >
-          <FiMenu size={22} />
+          {open ? <FiX size={22} /> : <FiMenu size={22} />}
         </button>
       </div>
 
