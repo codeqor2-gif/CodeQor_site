@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import Logo from "./Logo";
+import MobileDrawer from "./MobileDrawer";
 
 const navItems = [
   { label: "Home", href: "/#home" },
@@ -35,6 +36,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const handleClose = useCallback(() => setOpen(false), []);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownTimeout = useRef<NodeJS.Timeout | null>(null);
 
@@ -178,79 +180,23 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile hamburger button */}
         <button
-          className="cursor-pointer rounded-lg border border-zinc-200 p-2 text-zinc-600 lg:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
+          type="button"
+          className="cursor-pointer rounded-lg border border-zinc-200 p-2 text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50 lg:hidden transition-colors"
+          onClick={(e) => {
+            e.stopPropagation();
+            setOpen(true);
+          }}
+          aria-label="Open mobile menu"
           aria-expanded={open}
         >
-          {open ? <FiX size={22} /> : <FiMenu size={22} />}
+          <FiMenu size={22} />
         </button>
       </div>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="max-h-[calc(100svh-4rem)] overflow-y-auto border-t border-zinc-100 lg:hidden"
-            style={{ background: "rgba(255,255,255,0.99)" }}
-          >
-            <div className="flex flex-col gap-1 px-6 pt-1 pb-8">
-              {navItems.map((navItem) => (
-                <div key={navItem.label}>
-<Link
-                      href={navItem.href}
-                      onClick={() => {
-                        setOpen(false);
-                      }}
-                      className={`block w-full cursor-pointer rounded-lg px-3 py-3 text-sm font-medium transition-colors ${
-                        navItem.children
-                          ? isActive(navItem.href)
-                            ? "text-primary-600 font-semibold"
-                            : "text-zinc-900 font-semibold"
-                          : isActive(navItem.href)
-                          ? "bg-primary-50 text-primary-600 font-semibold"
-                          : "text-zinc-600 hover:bg-primary-50 hover:text-primary-600"
-                      }`}
-                    >
-                    {navItem.label}
-                  </Link>
-                  {navItem.children && (
-                    <div className="ml-4 flex flex-col gap-0.5">
-                      {navItem.children.map((child) => (
-                        <Link
-                          key={child.label}
-                          href={child.href}
-                          onClick={() => setOpen(false)}
-                          className={`cursor-pointer rounded-lg px-3 py-2 text-[13px] transition-colors ${
-                            childActive(child.href)
-                              ? "bg-primary-50 text-primary-600 font-semibold"
-                              : "text-zinc-500 hover:bg-primary-50 hover:text-primary-600"
-                          }`}
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-              <Link
-                href="/contact"
-                onClick={() => setOpen(false)}
-                className="mt-3 inline-block rounded-md bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 text-center text-sm font-semibold text-white"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Mobile responsive slide-over navigation drawer */}
+      <MobileDrawer isOpen={open} onClose={handleClose} />
     </motion.header>
   );
 }
