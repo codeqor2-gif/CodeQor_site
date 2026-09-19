@@ -52,13 +52,13 @@ export const techData: Record<string, { title: string; description: string; tech
   Mobile: {
     title: "Mobile Development",
     description:
-      "Our Mobile Development team builds fast, cross-platform apps with modern tools for smooth user experiences.",
+      "Our Mobile Development team builds fast, cross-platform apps with modern tools.",
     techs: ["React Native", "Flutter", "Swift", "Kotlin", "SwiftUI", ".NET MAUI"],
   },
   "Front-End": {
     title: "Front-End Development",
     description:
-      "Our Front-End team creates visually appealing, responsive, and user-friendly websites using modern frameworks.",
+      "Our Front-End team creates responsive websites using modern frameworks.",
     techs: ["React", "Vue.js", "Angular", "Tailwind CSS", "Sass", "Next.js"],
   },
   Web: {
@@ -68,32 +68,32 @@ export const techData: Record<string, { title: string; description: string; tech
   },
   "Back-End": {
     title: "Back-End Development",
-    description: "Robust back-end solutions using Node.js, Express.js, MongoDB, PostgreSQL, Docker, and Redis.",
+    description: "Robust back-end solutions using Node.js, Express.js, MongoDB etc.",
     techs: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Docker", "Redis"],
   },
   "Dev & CloudOps": {
     title: "DevOps & CloudOps",
-    description: "Streamline development with Docker, Kubernetes, AWS, Azure, Terraform, and GitLab CI/CD.",
+    description: "Streamline development with Docker, Kubernetes, AWS, Azure, Terraform etc.",
     techs: ["Docker", "Kubernetes", "AWS", "Azure", "Terraform", "GitLab CI/CD"],
   },
   "AI/ML": {
     title: "AI & Machine Learning",
-    description: "Advanced AI/ML solutions using TensorFlow, PyTorch, Keras, Scikit-Learn, OpenAI, and Hugging Face.",
+    description: "Advanced AI/ML solutions using TensorFlow, Keras, OpenAI, and Hugging Face.",
     techs: ["TensorFlow", "PyTorch", "Keras", "Scikit-Learn", "OpenAI", "Hugging Face"],
   },
   "UI/UX": {
     title: "UI/UX Design",
-    description: "Craft intuitive and user-friendly designs using Figma, Sketch, Adobe XD, InVision, and Balsamiq.",
+    description: "Craft intuitive and user-friendly designs using Figma, Sketch, Adobe XD etc.",
     techs: ["Figma", "Sketch", "Adobe XD", "InVision", "Balsamiq", "Zeplin"],
   },
   "QA & Testing": {
     title: "QA & Testing",
-    description: "Ensure software quality and reliability using Selenium, Jest, JUnit, Cypress, Postman, and Jira.",
+    description: "Ensure software quality and reliability using Selenium, Jest, JUnit etc.",
     techs: ["Selenium", "Jest", "JUnit", "Cypress", "Postman", "Jira"],
   },
   Blockchain: {
     title: "Blockchain Development",
-    description: "Secure blockchain solutions using Ethereum, Solidity, Hyperledger, Polkadot, Chainlink, and Truffle.",
+    description: "Secure blockchain solutions using Ethereum, Solidity, Hyperledger etc.",
     techs: ["Ethereum", "Solidity", "Hyperledger", "Polkadot", "Chainlink", "Truffle"],
   },
 };

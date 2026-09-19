@@ -4,35 +4,33 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden bg-[#07152b] pt-[64px] lg:pt-[70px]"
+      className="relative w-full min-h-screen overflow-hidden bg-[#07152b]"
+      style={{ minHeight: "100dvh" }}
       aria-label="Hero Section"
     >
-      {/* Video container — complete edge-to-edge video with zero dark blue outline */}
-      <div className="relative w-full flex items-center justify-center">
-        {/* Desktop: landscape video (hidden on mobile) */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster="/hero-desktop-poster.jpg"
-          className="hidden w-full h-auto md:block"
-          src="/Heroupdate.mp4"
-        />
+      {/* Desktop: landscape video strictly limited to hero boundaries */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/hero-desktop-poster.jpg"
+        className="absolute inset-0 hidden h-full w-full object-cover md:block"
+        src="/Heroupdate.mp4"
+      />
 
-        {/* Mobile: seamless portrait video (Text upper, laptop nicha, zero dark blue outline) */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster="/hero-mobile-poster.jpg"
-          className="block w-full h-auto md:hidden"
-          src="/Heroupdate-portrait.mp4"
-        />
-      </div>
+      {/* Mobile: portrait video strictly limited to hero boundaries */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/hero-mobile-poster.jpg"
+        className="absolute inset-0 block h-full w-full object-cover md:hidden"
+        src="/Heroupdate-portrait.mp4"
+      />
 
       {/* Accessible semantic heading for SEO and screen readers */}
       <div className="sr-only">
