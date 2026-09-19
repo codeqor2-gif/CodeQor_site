@@ -75,7 +75,7 @@ export default function ContactForm() {
     }
   }
   return (
-    <section className="relative py-6" style={{ background: "#F8FAFC" }}>
+    <section className="relative py-8" style={{ background: "#F8FAFC" }}>
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[52%_1fr] lg:gap-10">
           {/* Left — IT Image (Engagement style) */}

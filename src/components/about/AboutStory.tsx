@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 
 export default function AboutStory() {
   return (
-    <section id="story" className="relative py-4 lg:py-8">
+    <section id="story" className="relative py-8 lg:py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal x={-40}>

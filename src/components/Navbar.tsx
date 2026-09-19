@@ -200,7 +200,7 @@ export default function Navbar() {
             className="max-h-[calc(100svh-4rem)] overflow-y-auto border-t border-zinc-100 lg:hidden"
             style={{ background: "rgba(255,255,255,0.99)" }}
           >
-            <div className="flex flex-col gap-1 px-6 py-4">
+            <div className="flex flex-col gap-1 px-6 pt-1 pb-8">
               {navItems.map((navItem) => (
                 <div key={navItem.label}>
 <Link
@@ -243,7 +243,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 inline-block rounded-md bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 text-center text-sm font-semibold text-white"
+                className="mt-3 inline-block rounded-md bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 text-center text-sm font-semibold text-white"
               >
                 Contact Us
               </Link>

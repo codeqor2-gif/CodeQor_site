@@ -15,7 +15,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function Engagement() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-accent-50 py-6">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-accent-50 py-8">
       <div className="pointer-events-none absolute -left-20 top-20 h-72 w-72 animate-blob rounded-full bg-primary-400/15 blur-[100px]" />
       <div className="pointer-events-none absolute -right-20 bottom-20 h-72 w-72 animate-blob rounded-full bg-accent-400/10 blur-[100px] [animation-delay:-6s]" />
 

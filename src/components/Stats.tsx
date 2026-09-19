@@ -31,7 +31,7 @@ export default function Stats() {
       <div className="pointer-events-none absolute -left-10 -top-16 h-64 w-64 rounded-full bg-white/40 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-20 right-0 h-72 w-72 rounded-full bg-primary-400/20 blur-3xl" />
 
-      <Reveal className="mx-auto hidden max-w-7xl grid-cols-5 gap-5 px-6 py-6 sm:grid lg:px-10">
+      <Reveal className="mx-auto hidden max-w-7xl grid-cols-5 gap-5 px-6 py-8 sm:grid lg:px-10">
         <div className="flex flex-col items-center justify-center gap-2 rounded-xl border border-white/70 bg-white/80 p-5 text-center shadow-sm backdrop-blur-sm">
           <div className="flex items-center gap-2 rounded-md bg-gradient-to-r from-primary-600 to-accent-600 px-3 py-1.5">
             <FaGoogle className="text-white" size={16} />
@@ -67,7 +67,7 @@ export default function Stats() {
         </div>
       </Reveal>
 
-      <Reveal className="px-6 py-6 sm:hidden">
+      <Reveal className="px-6 py-8 sm:hidden">
         <div className="flex flex-col items-center gap-3 rounded-xl border border-white/70 bg-white/80 p-5 text-center shadow-sm backdrop-blur-sm">
           <div className="flex items-center gap-2 rounded-md bg-gradient-to-r from-primary-600 to-accent-600 px-3 py-1.5">
             <FaGoogle className="text-white" size={14} />

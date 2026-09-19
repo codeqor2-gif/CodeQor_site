@@ -63,9 +63,9 @@ const reasons = [
 
 export default function AboutWhyChoose() {
   return (
-    <section className="relative py-4 lg:py-8">
+    <section className="relative py-8 lg:py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <Reveal className="mb-2 -mt-4">
+        <Reveal className="mb-2">
           <SectionHeading
             title="Why Choose"
             highlight="CodQor"

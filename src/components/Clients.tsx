@@ -17,7 +17,7 @@ export default function Clients() {
   const row = [...clients, ...clients];
 
   return (
-    <section id="clients" className="relative overflow-hidden py-6">
+    <section id="clients" className="relative overflow-hidden py-8">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <h2 className="text-left text-2xl font-bold text-zinc-900 sm:text-3xl">

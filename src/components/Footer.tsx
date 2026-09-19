@@ -72,7 +72,7 @@ export default function Footer() {
 
       <div className="relative mx-auto max-w-7xl px-6 pt-10 pb-10 lg:px-12">
         {/* 4-column grid */}
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[30%_1fr_1fr_20%] lg:gap-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-[30%_1fr_1fr_20%] lg:gap-12">
           {/* Column 1 — Brand */}
           <div>
             <div className="mb-5">

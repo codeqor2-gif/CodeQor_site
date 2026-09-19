@@ -98,7 +98,7 @@ export default function AboutProcess() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section ref={sectionRef} className="relative py-4 lg:py-8 overflow-hidden">
+    <section ref={sectionRef} className="relative py-8 lg:py-12 overflow-hidden">
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -left-32 -top-32 h-[28rem] w-[28rem] rounded-full bg-primary-100/50 blur-3xl" />
         <div className="absolute -right-32 -bottom-32 h-[28rem] w-[28rem] rounded-full bg-accent-100/50 blur-3xl" />

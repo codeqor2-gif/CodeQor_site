@@ -26,7 +26,7 @@ export default function Contact() {
   return (
     <section
       id="contactus"
-      className="relative py-6"
+      className="relative py-8"
       style={{ background: "#F8FAFC" }}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10">

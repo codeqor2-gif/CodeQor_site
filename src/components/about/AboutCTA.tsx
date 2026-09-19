@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 
 export default function AboutCTA() {
   return (
-    <section className="relative py-6 lg:py-10">
+    <section className="relative py-10 lg:py-16">
       <div className="absolute inset-0 bg-gradient-to-br from-night-950 via-night-900 to-primary-950" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,102,204,0.2),transparent_70%)]" />
 

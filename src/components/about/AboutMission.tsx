@@ -40,7 +40,7 @@ const cards = [
 
 export default function AboutMission() {
   return (
-    <section className="relative py-4 lg:py-8">
+    <section className="relative py-8 lg:py-12">
       <div className="absolute inset-0 bg-transparent" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal className="mb-6">
