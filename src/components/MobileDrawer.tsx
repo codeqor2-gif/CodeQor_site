@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { FiX, FiChevronDown, FiArrowRight } from "react-icons/fi";
+import { FiX, FiChevronDown } from "react-icons/fi";
 import Logo from "./Logo";
 
 interface MobileDrawerProps {
@@ -219,14 +219,6 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                               className="overflow-hidden pl-3 pr-1 pt-1 pb-3"
                             >
                               <div className="flex flex-col gap-1 border-l-2 border-primary-100 pl-3">
-                                <Link
-                                  href="/services"
-                                  onClick={() => handleNavClick("/services")}
-                                  className="flex items-center justify-between rounded-lg px-3 py-2 text-xs font-semibold text-primary-600 hover:bg-primary-50 transition-colors"
-                                >
-                                  <span>Explore All Services</span>
-                                  <FiArrowRight size={13} />
-                                </Link>
                                 {item.children.map((child) => (
                                   <Link
                                     key={child.label}
