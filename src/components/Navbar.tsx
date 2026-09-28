@@ -28,6 +28,12 @@ const navItems = [
   {
     label: "Products",
     href: "/#solutions",
+    children: [
+      { label: "HRMS", href: "/contact?product=HRMS" },
+      { label: "Ledger System", href: "/contact?product=Ledger%20System" },
+      { label: "E-commerce", href: "/contact?product=E-commerce" },
+      { label: "School Management System", href: "/contact?product=School%20Management%20System" },
+    ],
   },
   { label: "Industries", href: "/industries" },
 ];
