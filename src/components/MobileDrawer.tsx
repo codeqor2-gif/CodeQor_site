@@ -15,13 +15,14 @@ interface MobileDrawerProps {
 
 interface ServiceChild {
   label: string;
-  href: string;
+  href?: string;
 }
 
 interface NavItem {
   label: string;
   href: string;
   children?: ServiceChild[];
+  dropdownOnly?: boolean;
 }
 
 const navItems: NavItem[] = [
@@ -41,14 +42,24 @@ const navItems: NavItem[] = [
       { label: "DevOps & Software Delivery", href: "/services/devops-software-delivery" },
     ],
   },
-  { label: "Products", href: "/#solutions" },
+  {
+    label: "Products",
+    href: "#",
+    dropdownOnly: true,
+    children: [
+      { label: "HRMS" },
+      { label: "Ledger System" },
+      { label: "E-commerce" },
+      { label: "School Management System" },
+    ],
+  },
   { label: "Industries", href: "/industries" },
 ];
 
 export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
-  const [servicesExpanded, setServicesExpanded] = useState(false);
+  const [expandedItem, setExpandedItem] = useState<string | null>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -104,6 +115,16 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
           elem.scrollIntoView({ behavior: "smooth" });
         }, 150);
       }
+    } else {
+      const [routePart, hash] = href.split("#");
+      if (routePart && hash && routePart !== pathname) {
+        // Section on another page: scroll to it once the new page mounts.
+        setTimeout(() => {
+          document
+            .getElementById(hash)
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 700);
+      }
     }
   };
 
@@ -116,6 +137,14 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
   };
 
   const isChildActive = (href: string) => {
+    const [clean, hash] = href.split("#");
+    if (hash) {
+      return (
+        typeof window !== "undefined" &&
+        pathname === clean &&
+        window.location.hash === `#${hash}`
+      );
+    }
     return pathname === href;
   };
 
@@ -181,36 +210,52 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                     return (
                       <li key={item.label} className="py-2">
                         <div className="flex items-center justify-between">
-                          <Link
-                            href={item.href}
-                            onClick={() => handleNavClick(item.href)}
-                            className={`flex-1 py-3 text-base sm:text-lg font-medium transition-colors ${
-                              active
-                                ? "text-primary-600 font-semibold"
-                                : "text-zinc-800 hover:text-primary-600 active:text-primary-700"
-                            }`}
-                          >
-                            {item.label}
-                          </Link>
+                          {item.dropdownOnly ? (
+                            <span
+                              className={`flex-1 py-3 text-base sm:text-lg font-medium ${
+                                active
+                                  ? "text-primary-600 font-semibold"
+                                  : "text-zinc-800"
+                              }`}
+                            >
+                              {item.label}
+                            </span>
+                          ) : (
+                            <Link
+                              href={item.href}
+                              onClick={() => handleNavClick(item.href)}
+                              className={`flex-1 py-3 text-base sm:text-lg font-medium transition-colors ${
+                                active
+                                  ? "text-primary-600 font-semibold"
+                                  : "text-zinc-800 hover:text-primary-600 active:text-primary-700"
+                              }`}
+                            >
+                              {item.label}
+                            </Link>
+                          )}
                           <button
                             type="button"
-                            onClick={() => setServicesExpanded((prev) => !prev)}
-                            aria-expanded={servicesExpanded}
+                            onClick={() =>
+                              setExpandedItem((prev) =>
+                                prev === item.label ? null : item.label,
+                              )
+                            }
+                            aria-expanded={expandedItem === item.label}
                             aria-label={`Toggle ${item.label} submenu`}
                             className="flex h-11 w-11 items-center justify-center rounded-lg text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 active:bg-zinc-200 transition-colors"
                           >
                             <FiChevronDown
                               size={20}
                               className={`transition-transform duration-300 ${
-                                servicesExpanded ? "rotate-180 text-primary-600" : ""
+                                expandedItem === item.label ? "rotate-180 text-primary-600" : ""
                               }`}
                             />
                           </button>
                         </div>
 
-                        {/* Expandable Services Submenu */}
+                        {/* Expandable Submenu */}
                         <AnimatePresence>
-                          {servicesExpanded && (
+                          {expandedItem === item.label && (
                             <motion.div
                               initial={{ opacity: 0, height: 0 }}
                               animate={{ opacity: 1, height: "auto" }}
@@ -219,21 +264,30 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                               className="overflow-hidden pl-3 pr-1 pt-1 pb-3"
                             >
                               <div className="flex flex-col gap-1 border-l-2 border-primary-100 pl-3">
-                                {item.children.map((child) => (
-                                  <Link
-                                    key={child.label}
-                                    href={child.href}
-                                    onClick={() => handleNavClick(child.href)}
-                                    className={`rounded-lg px-3 py-2 text-[13px] font-medium transition-colors ${
-                                      isChildActive(child.href)
-                                        ? "bg-primary-50 text-primary-600 font-semibold"
-                                        : "text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900 active:text-primary-600"
-                                    }`}
-                                  >
-                                    {child.label}
-                                  </Link>
-                                ))}
-                              </div>
+                                  {item.children.map((child) =>
+                                    item.dropdownOnly ? (
+                                      <span
+                                        key={child.label}
+                                        className="rounded-lg px-3 py-2 text-[13px] font-medium text-zinc-600"
+                                      >
+                                        {child.label}
+                                      </span>
+                                    ) : (
+                                      <Link
+                                        key={child.label}
+                                        href={child.href ?? "#"}
+                                        onClick={() => handleNavClick(child.href ?? "#")}
+                                        className={`rounded-lg px-3 py-2 text-[13px] font-medium transition-colors ${
+                                          isChildActive(child.href ?? "#")
+                                            ? "bg-primary-50 text-primary-600 font-semibold"
+                                            : "text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900 active:text-primary-600"
+                                        }`}
+                                      >
+                                        {child.label}
+                                      </Link>
+                                    ),
+                                  )}
+                                </div>
                             </motion.div>
                           )}
                         </AnimatePresence>

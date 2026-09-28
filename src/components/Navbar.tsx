@@ -8,7 +8,15 @@ import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import Logo from "./Logo";
 import MobileDrawer from "./MobileDrawer";
 
-const navItems = [
+type NavChild = { label: string; href?: string };
+type NavItem = {
+  label: string;
+  href: string;
+  dropdownOnly?: boolean;
+  children?: NavChild[];
+};
+
+const navItems: NavItem[] = [
   { label: "Home", href: "/#home" },
   { label: "About Us", href: "/about" },
   {
@@ -27,12 +35,13 @@ const navItems = [
   },
   {
     label: "Products",
-    href: "/#solutions",
+    href: "#",
+    dropdownOnly: true,
     children: [
-      { label: "HRMS", href: "/contact?product=HRMS" },
-      { label: "Ledger System", href: "/contact?product=Ledger%20System" },
-      { label: "E-commerce", href: "/contact?product=E-commerce" },
-      { label: "School Management System", href: "/contact?product=School%20Management%20System" },
+      { label: "HRMS" },
+      { label: "Ledger System" },
+      { label: "E-commerce" },
+      { label: "School Management System" },
     ],
   },
   { label: "Industries", href: "/industries" },
@@ -57,12 +66,19 @@ export default function Navbar() {
     return pathname === clean;
   };
 
-  // Style for dropdown child links: active when on that exact service route.
+  // Style for dropdown child links: active when on that exact section/route.
   const childActive = (href: string) => {
-    const clean = href.split("#")[0];
+    const [clean, hash] = href.split("#");
     if (!clean) return false;
     if (href.includes("#solutions")) return false;
     if (clean === "/services" && pathname === "/services") return false;
+    if (hash) {
+      return (
+        typeof window !== "undefined" &&
+        pathname === clean &&
+        window.location.hash === `#${hash}`
+      );
+    }
     return pathname === clean;
   };
 
@@ -82,6 +98,39 @@ export default function Navbar() {
     dropdownTimeout.current = setTimeout(() => setActiveDropdown(null), 150);
   };
 
+  // Same-page section links (e.g. Home -> /#home) don't trigger a route change,
+  // so Next.js won't scroll the page. Handle those manually. Dropdown-only links
+  // (Products) toggle their menu instead of navigating anywhere.
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    navItem: { label: string; href?: string; dropdownOnly?: boolean },
+  ) => {
+    const { dropdownOnly, label } = navItem;
+    const href = navItem.href ?? "#";
+    if (dropdownOnly) {
+      e.preventDefault();
+      setActiveDropdown((prev) => (prev === label ? null : label));
+      return;
+    }
+    setOpen(false);
+    setActiveDropdown(null);
+    const [routePart, hash] = href.split("#");
+    const clean = routePart || "/";
+    if (pathname === clean && hash) {
+      e.preventDefault();
+      document
+        .getElementById(hash)
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else if (hash) {
+      // Section on another page: scroll to it once the new page mounts.
+      setTimeout(() => {
+        document
+          .getElementById(hash)
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 700);
+    }
+  };
+
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
@@ -98,6 +147,7 @@ export default function Navbar() {
         {/* Logo — left */}
         <Link
           href="/#home"
+          onClick={(e) => handleNavClick(e, { label: "Home", href: "/#home" })}
           className="shrink-0 transition-transform duration-300 ease-out hover:scale-[1.05] active:scale-100"
           aria-label="CodQor Technologies home"
         >
@@ -116,10 +166,7 @@ export default function Navbar() {
               >
                 <Link
                   href={navItem.href}
-                  onClick={() => {
-                    setOpen(false);
-                    setActiveDropdown(null);
-                  }}
+                  onClick={(e) => handleNavClick(e, navItem)}
                   className={`group relative flex items-center gap-1 rounded-lg px-3 py-2 text-[14px] font-medium transition-all duration-200 cursor-pointer ${
                     isActive(navItem.href)
                       ? "bg-primary-50 text-primary-600 font-semibold"
@@ -151,23 +198,29 @@ export default function Navbar() {
                       onMouseEnter={() => handleDropdownEnter(navItem.label)}
                       onMouseLeave={handleDropdownLeave}
                     >
-                      {navItem.children.map((child) => (
-                        <Link
-                          key={child.label}
-                          href={child.href}
-                          onClick={() => {
-                            setOpen(false);
-                            setActiveDropdown(null);
-                          }}
-                          className={`block px-4 py-2.5 text-[13px] font-medium transition-colors ${
-                            childActive(child.href)
-                              ? "bg-primary-50 text-primary-600 font-semibold"
-                              : "text-zinc-600 hover:bg-primary-50 hover:text-primary-600"
-                          }`}
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
+                      {navItem.children.map((child) =>
+                        navItem.dropdownOnly ? (
+                          <span
+                            key={child.label}
+                            className="block cursor-default px-4 py-2.5 text-[13px] font-medium text-zinc-600"
+                          >
+                            {child.label}
+                          </span>
+                        ) : (
+                          <Link
+                            key={child.label}
+                            href={child.href ?? "#"}
+                            onClick={(e) => handleNavClick(e, child)}
+                            className={`block px-4 py-2.5 text-[13px] font-medium transition-colors ${
+                              childActive(child.href ?? "#")
+                                ? "bg-primary-50 text-primary-600 font-semibold"
+                                : "text-zinc-600 hover:bg-primary-50 hover:text-primary-600"
+                            }`}
+                          >
+                            {child.label}
+                          </Link>
+                        ),
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>
